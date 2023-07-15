@@ -1,0 +1,16 @@
+.reveal pre {
+	width: 100%;
+}
+
+.reveal pre code {
+	max-height: 600px;
+}
+
+table {
+	color: #eee8d5;
+}
+
+.moon-span {
+	color: #268bd2;
+}
+
