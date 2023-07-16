@@ -7,10 +7,18 @@
 }
 
 table {
-	color: #eee8d5;
+	color: var(--r-main-color);
 }
 
 .moon-span {
 	color: #268bd2;
 }
 
+.accentued-1 {
+	color: var(--r-background-color);
+	background-color: var(--r-main-color);
+}
+
+.accentued-2 {
+	color: var(--r-heading-color);
+}

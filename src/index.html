@@ -11,561 +11,70 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1>Javascript</h1>
+        <h1>JavaScript</h1>
         <p>
-          <small>Created by <a href="https://www.linkedin.com/in/alexandre-rivet/" target="_blank">Alexandre Rivet</a></small>
+          <small>Créé par <a href="https://www.linkedin.com/in/alexandre-rivet/" target="_blank">Alexandre Rivet</a></small>
         </p>
       </section>
-      <section>
-					<section>
-						<h2>Basics</h2>
-					</section>
-					<section>
-						<h3>Variables</h3>
-						A storage container of different kind of objects
-						<pre><code class="hljs javascript" data-trim>
-							var a = undefined;
-							var b = 2;
-							var $c = "string";
-							var _d = {};
-						</code></pre>
-						JavaScript is case-sensitive. So var a and var A are two different variables.
-						<br/><br/>
-						<i>To avoid global scope issue, always prefix with <b>var</b> keyword</i>
-					</section>
-					<section>
-						<h3>Types (1/2)</h3>
-						<table>
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Examples</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Number</td>
-									<td>
-										<pre><code class="hljs javscript" data-trim>
-											var a = 1;
-											var b = -3.14;
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>string</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var a = "One string";
-											var b = 'A second String with "double quotes".';
-											var c = "An escape \"double quote\"";
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>Boolean</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var trueBool = true;
-											var falseBool = false;
-										</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Types (2/2)</h3>
-						<table>
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Examples</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Object</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var obj1 = {};
-											var obj2 = new Object();
-											// The first notation is more recommended
-										</code></pre>
-								</tr>
-								<tr>
-									<td>null</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var emptyVar = null;
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>undefined</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var undefinedVar;
-										</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						To find the type of a variable, you can use the operator:
-						<br/>
-						<pre><code class="hljs javascript" data-trim>
-							console.log(typeof variableName);
-						</code></pre>
-					</section>
-					<section>
-						<h3>Operators (1/3)</h3>
-						The <span class="moon-span">=</span> symbol assigns a value to a variable
-						<pre><code class="hljs javascript" data-trim>
-							var negNumber = -3.14;
-							var string = "One String";
-							var trueBool = true;
-							var emptyVar = null;
-						</code></pre>
-					</section>
-					<section>
-						<h3>Operators (2/3)</h3>
-						The <span class="moon-span">+</span>, <span class="moon-span">-</span>, <span class="moon-span">*</span>, <span class="moon-span">/</span> are the arithmetic operators
-						<pre><code class="hljs javascript" data-trim>
-							var a = 2;
-							var b = 3;
-							var sum = a + b; 
-							var sub = a - b;
-							var mul = a * b;
-							var div = a / b;
-						</code></pre>
-						<i>The arithmetic operators respect the algebra rules</i>
-					</section>
-					<section>
-						<h3>Operators (3/3)</h3>
-						The <span class="moon-span">+=</span>, <span class="moon-span">-=</span>, <span class="moon-span">*=</span>, <span class="moon-span">/=</span>, <span class="moon-span">++</span>, <span class="moon-span">--</span> are the shorthand math operators
-						<pre><code class="hljs javascript" data-trim>
-							var a = 2;
-							a += 2; // a = a + 2
-							a -= 2; // a = a * 2
-							a *= 2; // a = a * 2
-							a /= 2; // a = a / 2
-							a++;    // a = a + 1
-							a--;    // a = a - 1
-							/*
-								For the two last operators, order is important
-								Pre-incrementation or Post-incrementation
-								var a = 1;
-								var b = a++ * 2; // b = 2
-								a = 1;
-								b = ++a * 2; // b = 4
-							*/							
-						</code></pre>
-					</section>
-					<section>
-						<h3>Strings & numbers together (1/2)</h3>
-						When there is a string in any combination, JavaScript will interpret as you want to combine and get a string.
-						<pre><code class="hljs javascript" data-trim>
-							var a = 29;
-							var b = "9";
-							var sum = a + b;
-						</code></pre>
-						<span class="fragment">sum is equals to "299" and not 38</span>
-						<pre class="fragment"><code class="hljs javascript" data-trim>
-							var sum = 38 + true + "string" + 38 + false + 10;
-						</code></pre>
-						<span class="fragment">sum is equals to "39string38false10"</span>
-					</section>
-					<section>
-						<h3>Strings & numbers together (2/2)</h3>
-						When another operator than the <span class="moon-span">+</span> is used, it will not work
-						<pre><code class="hljs javascript" data-trim>
-							var a = 29;
-							var b = "9";
-							var sub = a - b; // NaN (Not a Number)
-							var mul = a * b; // NaN
-							var div = a / b; // NaN
-						</code></pre>
-						To test if a variable is a Number or not, you can use:
-						<br/>
-						<pre><code class="hljs javascript" data-trim>
-							console.log(isNaN(sub)); // false
-						</code></pre>
-					</section>
-					<section>
-						<h3>Conditional statements (1/2)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							// If conditional statement
-							if (someCondition) {
-								// Do something
-							}
-						</code></pre>
-						If someCondition is true, whatever is inside the statement, the code block will run.
-						<br>
-						Otherwise, it will go to the next statement in the code.
-					</section>
-					<section>
-						<h3>Conditional statements (2/2)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							// If Else statement
-							if (someCondition) {
-								// Do something when someCondition is true
-							} else {
-								// Do something else when someCondition is false
-							}
-						</code></pre>
-					</section>
-					<section>
-						<h3>Logical operators (1/5)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							var x = 5;
-						</code></pre>
-						<table>
-							<thead>
-								<tr>
-									<th>Operator</th>
-									<th>Description</th>
-									<th>Comparison</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>==</td>
-									<td>equal to</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x == 8; 	// Return false
-											x == 5; 	// Return true
-											x == '5';	// Return true
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>===</td>
-									<td>equal value and equal type</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x === 5; 	// Return true
-											x === '5';	// Return false
-										</code></pre>
-									</td>
-								</tr>
-								
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Logical operators (2/5)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							var x = 5;
-						</code></pre>
-						<table>
-							<thead>
-								<tr>
-									<th>Operator</th>
-									<th>Description</th>
-									<th>Comparison</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>!=</td>
-									<td>not equal to</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x != 8; 	// Return true
-											x != 5; 	// Return false
-											x != '5';	// Return false
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>!==</td>
-									<td>not equal value or not equal type</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x !== 5; 	// Return false
-											x !== '5';	// Return true
-										</code></pre>
-									</td>
-								</tr>
-								
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Logical operators (3/5)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							var x = 5;
-						</code></pre>
-						<table>
-							<thead>
-								<tr>
-									<th>Operator</th>
-									<th>Description</th>
-									<th>Comparison</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>></td>
-									<td>greater than</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x > 8; 	// Return false
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>&lt;</td>
-									<td>less than</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x &lt; 8; 	// Return true
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>>=</td>
-									<td>greater than or equal to</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x >= 8; // Return false
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>&lt;=</td>
-									<td>less than or equal to</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											x &lt;= 8; // Return true
-										</code></pre>
-									</td>
-								</tr>								
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Logical operators (4/5)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							var x = 6;
-							var y = 3;
-						</code></pre>
-						<table>
-							<thead>
-								<tr>
-									<th>Operator</th>
-									<th>Description</th>
-									<th>Comparison</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>&&</td>
-									<td>and</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											(x &lt; 10 && y > 1) // Return true
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>||</td>
-									<td>or</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											(x == 5 || y == 5) // Return false
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>!</td>
-									<td>not</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											!(x == y) 	   // Return true
-										</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Logical operators (5/5)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							// Classical way to do an if/else
-							if (a == b) {
-								console.log("a & b match");
-							} else {
-								console.log("a & b don't match");
-							}
-							
-							// Ternary operator
-							a == b ? console.log("a & b match") : console.log("a & b don't match");
-						</code></pre>
-					</section>
-					<section>
-						<h3>Loops (1/3)</h3>
-						<table>
-							<thead>
-								<th>Loop type</th>
-								<th>Example</th>
-							</thead>
-							<tbody>
-								<tr>
-									<td>For</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											for(var i = 0; i &lt; 10; i++) {
-												console.log(i);
-											}
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>While</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var i = 0;
-											while(i &lt; 10) {
-												console.log(i++);
-											}
-										</code></pre>
-									</td>
-								</tr>
-								<tr>
-									<td>Do...While</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											var i = 0;
-											do {
-												console.log(i++);
-											} while (i &lt; 10);
-										</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Loops (2/3)</h3>
-						<table>
-							<thead>
-								<th>Keyword</th>
-								<th>Example</th>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Break</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											// Terminate the current loop                  
-											var output = 0;
-											for (var i = 0; i &lt; 10; i++) {
-												if (i === 5) {
-													break;
-												}
-												output += i;
-											}
-											console.log(output); // 10
-										</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Loops (3/3)</h3>
-						<table>
-							<thead>
-								<th>Keyword</th>
-								<th>Example</th>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Continue</td>
-									<td>
-										<pre><code class="hljs javascript" data-trim>
-											// Terminate the current iteration of the loop
-											var output = 0;
-											for (var i = 0; i &lt; 10; i++) {
-												if (i === 5) {
-													continue;
-												}
-												output += i;
-											}
-											console.log(output); // 40
-										</code></pre>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h3>Arrays (1/3)</h3>
-						Arrays are used to store multiple values in a single variable.
-						<pre><code class="hljs javascript" data-trim>
-							var fruits1 = ["orange", "apple", "lemon", "pear"];
-							// or
-							var fruits2 = new Array("orange", "apple", "lemon", "pear");
-						</code></pre>
-						Access to an element in one array
-						<pre><code class="hljs javascript" data-trim>
-							var element = fruits1[1]; // element == "apple"
-						</code></pre>
-						Arrays are objects
-						<pre><code class="hljs javascript" data-trim>
-							console.log(typeof fruits1); // object
-						</code></pre>
-					</section>
-					<section>
-						<h3>Arrays (2/3)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							var fruits = ["orange", "apple", "lemon", "pear"];
-						</code></pre>
-						Properties (Get it by name)
-						<pre><code class="hljs javascript" data-trim>
-							var nbElements = fruits.length; // 4
-						</code></pre>
-						Methods
-						<pre><code class="hljs javascript" data-trim>
-							// Reverse the array
-							fruits.reverse(); // ["pear", "lemon", "apple", "orange"]
-							
-							// Remove the first value of the array
-							fruits.shift();   // ["lemon", "apple", "orange"]
-							
-							// Add new elements in front of the array (separated by commas)
-							fruits.unshift("cherry"); // ["cherry", "lemon", "apple", "orange"]
-							
-							// Remove the last value of the array
-							fruits.pop(); // ["cherry", "lemon", "apple"]
-						</code></pre>
-					</section>
-					<section>
-						<h3>Arrays (3/3)</h3>
-						<pre><code class="hljs javascript" data-trim>
-							var fruits = ["orange", "apple", "lemon"];
-						</code></pre>
-						Methods
-						<pre><code class="hljs javascript" data-trim>
-							// Add new elements at the end of the array (separated by comma)
-							fruits.add("pear"); // ["orange", "apple", "lemon", "pear"]
-							
-							// Remove elements from a specific position in array
-							fruits.splice(1, 2); // ["orange", "pear"]
-							
-							// Create a copy of an array
-							var newArr = fruits.slice();
-							
-							// Get the first element that matches the search pattern
-							var result = fruits.indexOf("pear"); // 1
-							
-							// Create a string with all items separated by a separator (comma as default)
-							var stringArray = result.join(); // "orange,pear"
-						</code></pre>
-					</section>
-				</section>
+	  <section>
+		<section>
+			<h2>Introduction</h2>
+		</section>
+		<section>
+			<h3>Définition</h3>
+			<ul>
+				<li>Créé en <span class="accentued-1">1995</span></li>
+				<li>Un langage de programmation les plus populaires et fait partie des <i>standards</i> avec le HTML et CSS</li>
+				<li>Langage <span class="accentued-1">interprété</span> par les principaux navigateurs web: Google Chrome, Safari, Firefox, Edge, etc.</li>
+				<li>Son évolution est gérée par le group <span class="accentued-1">ECMA international</span></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Fondamentaux</h3>
+			<ul>
+				<li>JavaScript est un langage <span class="accentued-1">dynamique</span></li>
+				<li>JavaScript est un langage (principalement) côté <span class="accentued-1">client</span></li>
+				<li>JavaScript est un langage <span class="accentued-1">interprété</span></li>
+				<li>JavaScript est un langage orienté <span class="accentued-1">objet</span></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Langage dynamique</h3>
+			<ul>
+				<li>Mettre à jour le contenu des pages web sans devoir changer le code manuellement</li>
+				<li>En opposition aux langages <i>statiques</i> tels que HTML et CSS. Pour rappel, le HTML est un langage de balisage utilisé pour structurer le contenu d'une page web et le CSS lui sera là pour mettre en forme et donc styliser ce contenu</li>
+				<li>Intervient donc pour manipuler le contenu HTML ou les styles CSS</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Langage (principalement) côté client (1/2)</h3>
+			<ul>
+				<li>Un site web est un ensemble <span class="accentued-1">de ressources et de fichiers</span> liés entre eux</li>
+				<li>Pour accéder à un site Web de n'importe où, il faut l'héberger sur un <span class="accentued-1">serveur</span></li>
+				<li>Un serveur est un ordinateur connecté à d'autres serveurs qui va héberger les fichiers et les envoyer à un client sur sa demande</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Langage (principalement) côté client (2/2)</h3>
+			<ul>
+				<li>Lorsqu'on accède à un site web via un navigateur, le serveur envoie donc tous les fichiers puis le navigateur se charge de les <span class="accentued-1">éxécuter côté client</span></li>
+				<li>En opposition, un langage côté serveur est exécuté côté serveur et les navigateurs ne sont pas capables de les comprendre</li>
+			</ul>
+			<br /><br />
+			<i>Note: Le JavaScript est principalement côté client mais on pourrait aussi s'en servir côté serveur à condition de l'utiliser dans un environnement adéquat (avec Node.js notamment)</i>
+		</section>
+		<section>
+			<h3>Langage interprété</h3>
+			<ul>
+				<li>Langage interprété: Capable d'être exécuté directement sous condition d'avoir le bon <span class="accentued-1">interpréteur</span> (ce que possède chaque navigateur web)</li>
+				<li>En opposition au langage <span class="accentued-1">compilé</span> tel que le langage C qui transforme d'abord en une autre forme pour pouvoir exécuter le code</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Langage orienté objet</h3>
+			<a href="TBD">Détaillé ici</a>
+		</section>
+	  </section>
     </div>	
 </body>
 </html>
