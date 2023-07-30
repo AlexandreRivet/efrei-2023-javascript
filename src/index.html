@@ -271,6 +271,43 @@
 				<li>Il est recommandé de choisir des noms de variables significatifs et descriptifs pour améliorer la lisibilité du code: <span class="accentued-1"><del>tmp</del></span> => <span class="accentued-1">myAge</span></li>
 			</ul>
 		</section>
+		<section>
+			<h4>Initialisation (1/2)</h4>
+			Initialiser une variable signifie lui attribuer une valeur initiale lors de sa déclaration. L'initialisation est la première étape pour créer une variable et lui donner une valeur de départ.
+			On va pouvoir initialiser une variable, soit directement au moment de sa déclaration ou après l'avoir déclarée.
+		</section>
+		<section>
+			<h4>Initialisation (2/2)</h4>
+			Pour initialiser une variable, on utilise l'opérateur <span class="accentued-2">=</span> qui correspond à l'opérateur d'assignation et non à l'opérateur d'égalité (au sens mathématique).
+			<pre><code class="hljs js" data-trim>
+				// Déclaration et initialisation en même temps
+				let age = 30;
+				// Déclaration d'abord puis initialisation
+				let name;
+				name = 'John';
+			</code></pre>
+			On utilise le mot clé (var, let ou const) que pour déclarer la variable. Lorsqu'on la manipule, on a plus besoin de le spécifier, on peut se contenter d'utiliser son nom.
+			<br />
+			<i>Note: Si vous déclarez une variable sans l'initialiser, elle sera automatiquement initialisée avec la valeur <span class="accentued-2">undefined</span></i>
+		</section>
+		<section>
+			<h4>Modification</h4>
+			Une variable est vouée à changer au cours de l'exécution du programme. Pour affecter de nouveau la même variable déjà initialisée, on va se contenter de réutiliser le même opérateur <span class="accentued-2">=</span>.
+			<pre><code class="hljs js" data-trim>
+				// Déclaration et initialisation en même temps
+				let age = 30;
+				// Déclaration d'abord puis initialisation
+				let name;
+				name = 'John';
+
+				/* On modifie la valeur existante (30)
+				 * Après cette ligne, age vaudra la nouvelle valeur (40) */
+				age = 40;
+			</code></pre>
+		</section>
+		<section>
+			<h4>TBD</h4>
+		</section>
 	  </section>
 	  <section>
 		<section>
