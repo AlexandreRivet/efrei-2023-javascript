@@ -306,7 +306,87 @@
 			</code></pre>
 		</section>
 		<section>
-			<h4>TBD</h4>
+			<h4>let & var (1/8)</h4>
+			Un langage est soumis à modification tout au long de sa vie et n'est jamais figé pour toujours. En informatique, tout va très vite et ces évolutions fait que, parfois, certains langages changent de philosophie de design.
+			<br />Et comme tout bouge très vite, les langages ne peuvent pas décider du jour au lendemain d'abandonner certains composants pour les nouveaux, car cela serait dramatique pour le web en général pour le cas du JavaScript.
+		</section>
+		<section>
+			<h4>let & var (2/8)</h4>
+			Il y a une sorte de rétro compatibilité à assurer sinon la plupart des sites seraient bogués.
+			<br />Lorsque le JavaScript a été créé et encore il y a quelques années, le seul mot clé permettant de déclarer les variables étaient var. Or après plusieurs années d'utilisation, les créateurs de JavaScript ont fini
+			par penser que ce mot clé pouvait porter à confusion et ont ainsi décidé d'en créer un nouveau le let. Ils en ont profité pour corriger quelques problèmes des déclarations de variable utilisant var.
+		</section>
+		<section>
+			<h4>let & var (3/8)</h4>
+			<h5>Hoisting (1/2)</h5>
+			<pre><code class="hljs js" data-trim>
+				// ✔️
+				age = 30;
+				var age;
+			</code></pre>
+			Lorsqu'on utilisait la syntaxe avec var, on n'était pas obligé de déclarer la variable avant de la manipler dans le code. Cela est dû au fait que JavaScript va traiter les déclarations var avant le reste du code JavaScript. On appelle ça la remontée ou le hoisting.
+		</section>
+		<section>
+			<h4>let & var (4/8)</h4>
+			<h5>Hoisting (2/2)</h5>
+			<pre><code class="hljs js" data-trim>
+				// ❌ (renvoie une erreur)
+				age = 30;
+				let age;
+			</code></pre>
+			Le comportement de hoisting a été jugé inadapté et a donc été corrigé dans les déclarations avec let.
+			<br />Le but est toujours d'améliorer le code et d'en créer plus compréhensible et plsu clair avec la bonne structure.
+		</section>
+		<section>
+			<h4>let & var (5/8)</h4>
+			<h5>Redéclaration (1/2)</h5>
+			<pre><code class="hljs js" data-trim>
+				// ✔️
+				var age = 30;
+				var age = 20;
+			</code></pre>
+			Lorsqu'on utilisait la syntaxe avec var, on avait le droit de déclarer plusieurs fois la même variable (ce qui avait pour conséquence de modifier la valeur stockée)
+		</section>
+		<section>
+			<h4>let & var (6/8)</h4>
+			<h5>Redéclaration (2/2)</h5>
+			<pre><code class="hljs js" data-trim>
+				// ❌ (renvoie une erreur)
+				let age = 30;
+				let age = 20;
+			</code></pre>
+			La nouvelle syntaxe en let n'autorise plus cela. Si on souhaite modifier la valeur stockée, il suffit juste de la réaffecter via le nom.
+			<br />Une fois plus, cette décision a été prise pour des raisons de clarté et de pertinence dans le code.
+		</section>
+		<section>
+			<h4>let & var (7/8)</h4>
+			<h5>Portée des variables (1/2)</h5>
+			<pre><code class="hljs js" data-trim>
+				function myFunc() {
+					if (true) {
+						var x = 10;
+					}
+					// ✔️ La variable x est accessible en dehors du bloc if
+					console.log(x);
+				}
+				myFunc(); // Affiche 10
+			</code></pre>
+			Les variables déclarées en var sont fonctionnelles (portée dans une fonction), ce qui signifie qu'elles sont liées à la fonction dans laquelle elles sont déclarées (ou globales si déclarées en dehors de tout fonction)
+		</section>
+		<section>
+			<h4>let & var (8/8)</h4>
+			<h5>Portée des variables (2/2)</h5>
+			<pre><code class="hljs js" data-trim>
+				function myFunc() {
+					if (true) {
+						let y = 10;
+					}
+					// ❌ La variable x est inaccessible en dehors du bloc if
+					console.log(y);
+				}
+				myFunc(); // Erreur: la variable y n'est pas définie
+			</code></pre>
+			Les variables déclarées en var sont liées au bloc (ensemble de code entre {}). Elles gardent donc leur déclaration et leur affectation dans l'ordre où elles apparaissent dans le code.
 		</section>
 	  </section>
 	  <section>
