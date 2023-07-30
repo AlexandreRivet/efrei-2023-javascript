@@ -157,12 +157,79 @@
 				<li>Mettre ses imports de JavaScript en fin de <span class="accentued-1">body</span> pour qu'il soit chargé et exécuté en dernier</li>
 				<li>Ajouter un attribut <span class="accentued-1">async</span> ou <span class="accentued-1">defer</span> sur la balise script qui permettra de mieux ordonner le chargement ou même de charger en asynchrone</li>
 			</ul>
-			
 		</section>
 	  </section>
 	  <section>
 		<section>
 			<h2>Syntaxe & Variables</h2>
+		</section>
+		<section>
+			<h3>Syntaxe (1/3)</h3>
+			<br/>
+			L'indentation est un concept fondamental qui consiste à la mise en forme et la structure du code. Elle consiste à ajouter des espaces ou tabulations en début de ligne  pour délimiter visuellement des blocs de code en fonction des instructions.
+			<br/>En JavaScript, l'indentation n'a pas d'impact direct sur l'exécution du programme mais elle facilite grandement la lecture et la compréhension du code.
+		</section>
+		<section>
+			<h3>Syntaxe (2/3) - Les commentaires (1/3)</h3>
+			Les commentaires sont des parties de code qui sont ignorées lors de l'exécution du programme. Ils servent à fournir des explications, des notes, des remarques ou à désactiver temporairement certaines parties du code sans les supprimer réellement.
+			<br/>Les commentaires sont essentiels pour améliorer la lisibilité du code et pour faciliter la collaboration entre les développeurs.
+		</section>
+		<section>
+			<h3>Syntaxe (2/3) - Les commentaires (2/3)</h3>
+			<h4>Commentaires sur une ligne</h4>
+			Pour écrire un commentaire sur une seule ligne, vous pouvez utilisez deux slash '//'. Tout ce qui suit les deux slash sur la même ligne sera considéré comme un commentaire.
+			<pre><code class="hljs js" data-trim>
+				// Ceci est un commentaire sur une seule ligne
+				var foo = 'bar'; // Vous pouvez également placer un commentaire à côté du code
+			</code></pre>
+		</section>
+		<section>
+			<h3>Syntaxe (2/3) - Les commentaires (3/3)</h3>
+			<h4>Commentaires sur plusieurs lignes</h4>
+			Pour écrire des commentaires sur plusieurs lignes, vous pouvez utiliser un slash suivi d'une étoile '/*' pour commencer le commentaire, et une étoile suivie d'un slash '*/' pour le terminer.
+			<pre><code class="hljs js" data-trim>
+				/* Ceci est un commentaire
+					sur plusieurs lignes en JavaScript
+					utile pour expliquer de grandes parties de code */
+				var foo = 'bar'; /*
+					Vous pouvez également utiliser les commentaires sur plusieurs lignes
+					pour désactiver temporairement une partie du code :
+					var z = 20;
+				*/
+			</code></pre>
+		</section>
+		<section>
+			<h3>Syntaxe (3/3) - Le point-virgule (1/3)</h3>
+			En JavaScript, le point-virgule ';' est utilisé pour terminer une instruction. Cependant, il n'est pas toujours obligatoire de l'utiliser à la fin de chaque instruction,
+			car JavaScript a une fonctionnalité appelée <span class="accentued-1">Automatic Semicolor Insertion (ASI)</span> qui insère automatiquement des point-virgules dans certains cas.
+		</section>
+		<section>
+			<h3>Syntaxe (3/3) - Le point-virgule (2/3)</h3>
+			Le point-virgule est principalement utilisé pour séparer les instructions. Si vous avez plusieurs instructions sur une même ligne, vous devez utiliser un point-virgule pour les séparer.
+			<pre><code class="hljs js" data-trim>
+				// Déclaration de variable suivie d'un point-virgule
+				// pour terminer l'instruction
+				var foo = 'bar';
+				// Utilisation d'une fonction suivie d'un point-virgule
+				// pour terminer l'instruction
+				console.log(foo);
+			</code></pre>
+		</section>
+		<section>
+			<h3>Syntaxe (3/3) - Le point-virgule (3/3)</h3>
+			Code avec point-virgule facultatif:
+			<pre><code class="hljs js" data-trim>
+				var x = 5  // Point-virgule facultatif
+				var y = 10  // Point-virgule facultatif
+				console.log(x + y)  // Point-virgule facultatif
+			</code></pre>
+			L'ASI convertit ce code en:
+			<pre><code class="hljs js" data-trim>
+				var x = 5;  // Point-virgule inséré automatiquement
+				var y = 10;  // Point-virgule inséré automatiquement
+				console.log(x + y);  // Point-virgule inséré automatiquement
+			</code></pre>
+			Il est important de noter qu'il est recommandé de toujours inclure les point-virgules de manière explicite pour rendre le code plus robuste, compréhensible et éviter tous problèmes de syntaxe même par l'ASI.
 		</section>
 	  </section>
 	  <section>
