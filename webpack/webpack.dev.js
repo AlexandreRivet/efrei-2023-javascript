@@ -9,7 +9,7 @@ module.exports = merge(
     devtool: 'source-map',
     devServer:
     {
-      port: 3000,
+      port: 8080,
       open: true,
       static: {
         directory: path.resolve(__dirname, '../dist'),

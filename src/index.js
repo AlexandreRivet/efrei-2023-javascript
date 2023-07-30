@@ -24,42 +24,64 @@ Reveal.initialize({
 window.Reveal = Reveal;
 
 // Manage to load iframes inside a slide
-const iFrameID = "iframe-preview";
-const iAttributeIframeSrc = "data-iframe-src";
+const frameClass = "iframe-preview";
+const attributeIframeSrc = "data-iframe-src";
+const attributeIframeRoot = "data-iframe-root";
 
-function loadIframe(iSrc, iDestination) {
-  let iframe = document.createElement("iframe");
-  iframe.id = iFrameID;
-  iframe.src = iSrc;
-  iframe.style.backgroundColor = "transparent";
-  iframe.frameBorder = "0";
+function getIframeRoot(slide) {
+  const potentialRoot = slide.querySelector(`[${attributeIframeRoot}]`);
+  return potentialRoot !== null ? potentialRoot : slide;
+}
+
+function getIframe(slide) {
+  const iframeRoot = getIframeRoot(slide);
+  return iframeRoot.querySelector(`.${frameClass}`);
+}
+
+function loadIframeIntoSlide(slide) {
+  const iframe = document.createElement("iframe");
+  iframe.classList.add(frameClass);
+  iframe.src = slide.getAttribute(attributeIframeSrc);
   iframe.allowTransparency = "true";
-  iframe.style.display = "none";
   iframe.onload = function () {
-    iframe.style.display = "block";
-    window.dispatchEvent(new Event('resize'));
+    let mutationObserver = new MutationObserver(function() {
+      // Keep iframe at the right size
+      iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+      Reveal.layout();
+    });
+    mutationObserver.observe(iframe.contentWindow.document.body, { childList: true, subtree: true });
   }
-  iDestination.appendChild(iframe);
+  getIframeRoot(slide).appendChild(iframe);
 }
 
-function unloadIframe(iSrc) {
-  let iframe = document.getElementById(iFrameID);
+function unloadIframeFromSlide(slide) {
+  const iframeRoot = getIframeRoot(slide);
+  const iframe = getIframe(slide);
   iframe.src = "";
-  iSrc.removeChild(iframe);
-  iframe = null;
+  iframeRoot.removeChild(iframe);
 }
 
+// Load potential iframe in new slide
 Reveal.addEventListener('slidechanged', function (e) {
-  var oldSlide = e.previousSlide;
-  var currentSlide = e.currentSlide;
-
-  // Check if we have to unload the previous slide
-  if (typeof oldSlide !== 'undefined' && oldSlide.hasAttribute(iAttributeIframeSrc)) {
-    unloadIframe(oldSlide);
+  const { currentSlide } = e;
+  if (
+    typeof currentSlide !== 'undefined' &&
+    currentSlide.hasAttribute(attributeIframeSrc) &&
+    getIframe(currentSlide) === null
+  ) {
+    loadIframeIntoSlide(currentSlide);
   }
+});
 
-  // Check if we have to load the current slide
-  if (typeof currentSlide !== 'undefined' && currentSlide.hasAttribute(iAttributeIframeSrc)) {
-    loadIframe(currentSlide.getAttribute(iAttributeIframeSrc), currentSlide);
+// Remove iframe once we are on new slide
+Reveal.addEventListener('slidetransitionend', function(e) {
+  const { previousSlide } = e;
+  // Check if we have to unload the previous slide
+  if (
+    typeof previousSlide !== 'undefined' &&
+    previousSlide.hasAttribute(attributeIframeSrc) &&
+    getIframe(previousSlide) !== null
+  ) {
+    unloadIframeFromSlide(previousSlide);
   }
 });
