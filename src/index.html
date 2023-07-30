@@ -123,13 +123,41 @@
 		<section data-iframe-src="./subcontent/first-project-html-tag">
 			<h3>Ecrire du JavaScript - dans une balise HTML</h3>
 			<div data-iframe-root></div>
-			<p>TBD</p>
+			<i>De nouvelles techniques permettent d'éviter ce genre de syntaxe qui est même déconseillé et considéré comme une mauvaise pratique.
+			<br/>Aujourd'hui le web et donc les composants sont de plus en plus complexes et donc la séparation des morceaux de code est la norme aujourd'hui.
+			</i>
 		</section>
 		<section data-iframe-src="./subcontent/first-project-html-script">
 			<h3>Ecrire du JavaScript - dans la page HTML</h3>
+			<div data-iframe-root></div>
+			<i>Cette solution est meilleure que la précédente mais encore une fois pas celle à retenir pour les mêmes raisons que la précédente.
+			Cela est surtout vrai si on écrit du code que l'on souhaite réutiliser entre plusieurs pages</i>
 		</section>
 		<section data-iframe-src="./subcontent/first-project-html-external">
 			<h3>Ecrire du JavaScript - dans un fichier séparé</h3>
+			<div data-iframe-root></div>
+			<i>Cette solution sera donc la meilleure des 3 vues qui permettra une meilleure réutilisation et une meilleure scalabilité du code.
+			Si on change le code à un seul endroit, la modification se répercutera partout.</i>
+		</section>
+		<section>
+			<h3>Ordre d'exécution du code par la navigateur (1/3)</h3>
+			Par défaut un navigateur va lire et exécuter le code dans l'ordre de son écriture. Il va donc analyser chaque ligne et en fonction faire des choses additionnels.
+			<br/>Par exemple, quand le navigateur va croise une balise script, il va s'arrêter dessus (donc bloquer le reste du traitement HTML), pour charger le code JavaScript et exécuté.
+		</section>
+		<section>
+			<h3>Ordre d'exécution du code par la navigateur (2/3)</h3>
+			Admettons que le codé soit exécuter avant que le reste de la page et que le code fasse référence à des éléments du DOM, cela posera un problème car les éléments ne seront pas présent
+			dans la page et donc le code plantera.
+		</section>
+		<section>
+			<h3>Ordre d'exécution du code par la navigateur (3/3)</h3>
+			Il existe 3 manières de contourner ça:<br/>
+			<ul>
+				<li>Mettre tout le JavaScript que l'on souhaite exécuter dans <span class="accentued-1">document.addEventListener('DOMContentLoaded', function() {})</span></li>
+				<li>Mettre ses imports de JavaScript en fin de <span class="accentued-1">body</span> pour qu'il soit chargé et exécuté en dernier</li>
+				<li>Ajouter un attribut <span class="accentued-1">async</span> ou <span class="accentued-1">defer</span> sur la balise script qui permettra de mieux ordonner le chargement ou même de charger en asynchrone</li>
+			</ul>
+			
 		</section>
 	  </section>
 	  <section>
