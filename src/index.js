@@ -22,3 +22,44 @@ Reveal.initialize({
 
 // Expose Reveal to window to be able to generate PDF through decktape
 window.Reveal = Reveal;
+
+// Manage to load iframes inside a slide
+const iFrameID = "iframe-preview";
+const iAttributeIframeSrc = "data-iframe-src";
+
+function loadIframe(iSrc, iDestination) {
+  let iframe = document.createElement("iframe");
+  iframe.id = iFrameID;
+  iframe.src = iSrc;
+  iframe.style.backgroundColor = "transparent";
+  iframe.frameBorder = "0";
+  iframe.allowTransparency = "true";
+  iframe.style.display = "none";
+  iframe.onload = function () {
+    iframe.style.display = "block";
+    window.dispatchEvent(new Event('resize'));
+  }
+  iDestination.appendChild(iframe);
+}
+
+function unloadIframe(iSrc) {
+  let iframe = document.getElementById(iFrameID);
+  iframe.src = "";
+  iSrc.removeChild(iframe);
+  iframe = null;
+}
+
+Reveal.addEventListener('slidechanged', function (e) {
+  var oldSlide = e.previousSlide;
+  var currentSlide = e.currentSlide;
+
+  // Check if we have to unload the previous slide
+  if (typeof oldSlide !== 'undefined' && oldSlide.hasAttribute(iAttributeIframeSrc)) {
+    unloadIframe(oldSlide);
+  }
+
+  // Check if we have to load the current slide
+  if (typeof currentSlide !== 'undefined' && currentSlide.hasAttribute(iAttributeIframeSrc)) {
+    loadIframe(currentSlide.getAttribute(iAttributeIframeSrc), currentSlide);
+  }
+});

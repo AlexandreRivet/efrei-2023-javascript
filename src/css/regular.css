@@ -22,3 +22,9 @@ table {
 .accentued-2 {
 	color: var(--r-heading-color);
 }
+
+.reveal iframe {
+	max-width: 100%;
+	width: 100%;
+	min-height: 500px;
+}

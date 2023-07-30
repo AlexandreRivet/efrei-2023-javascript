@@ -1,9 +1,11 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.js'),
+  stats: 'none',
   output:
   {
     filename: 'bundle.[fullhash].js',
@@ -13,9 +15,14 @@ module.exports = {
   [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/index.html'),
-      minify: true
-    })
+      template: path.resolve(__dirname, '../src/index.html')
+    }),
+    new CopyWebpackPlugin({
+      patterns: ['libs', 'subcontent'].map((dirName) => ({
+        from: path.resolve(__dirname, `../src/${dirName}`),
+        to: path.resolve(__dirname, `../dist/${dirName}`),
+      }))
+    }),
   ],
   module:
   {
