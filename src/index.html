@@ -724,6 +724,521 @@
 		<section>
 			<h2>Structures de contrôle</h2>
 		</section>
+		<section>
+			<h3>Présentation (1/2)</h3>
+			Les structures de contrôle en JavaScript permettent de contrôler l'exécution du code en fonction de certaines conditions. Elles vous permettent de prendre des décisions et d'exécuter des blocs de code spécifiques en fonction des valeurs des variables ou d'autres conditions.
+		</section>
+		<section>
+			<h3>Présentation (2/2)</h3>
+			Il existe deux grands types de structures de contrôle:
+			<br />
+			<ul>
+				<li>Les conditions qui permettent d'exécuter un certain nombre d'instructions si et seulement si une condition donnée est vérifiée.</li>
+				<li>Les boucles qui permettent d'exécuter un bloc de code autant de fois que nécessaire tant qu'une condition donnée est vérifiée.</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Opérateurs de comparaison (1/4)</h3>
+			Les opérateurs de comparaison en JavaScript permettent de comparer des valeurs et de déterminer si une condition est vraie ou fausse. Ils sont couramment utilisés dans les structures de contrôle.
+		</section>
+		<section>
+			<h3>Opérateurs de comparaison (2/4)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Opérateur</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Egalité</td>
+						<td>==</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								/* true (valeur égale
+								 même si type différent) */
+								console.log(5 == '5');
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Non-égalité</td>
+						<td>!=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								// true (valeurs différentes)
+								console.log(10 != '5');
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Egalité stricte</td>
+						<td>===</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								// false (types différents)
+								console.log(5 === '5');
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Non-égalité stricte</td>
+						<td>!==</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								// true (types différents)
+								console.log(5 !== '5');
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Opérateurs de comparaison (3/4)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Opérateur</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Infériorité</td>
+						<td>&lt;</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								<script type="text/template">
+									console.log(10 < 15); // true
+									console.log(10 < 10); // false
+								</script>
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Infériorité ou égalité</td>
+						<td>&lt;=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								<script type="text/template">
+									console.log(10 <= 15); // true
+									console.log(10 <= 10); // true
+								</script>
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Supériorité</td>
+						<td>&gt;</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								<script type="text/template">
+									console.log(15 > 10); // true
+									console.log(15 > 15); // false
+								</script>
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Supériorité ou égalité</td>
+						<td>&gt;=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								<script type="text/template">
+									console.log(15 >= 10); // true
+									console.log(15 >= 15); // true
+								</script>
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Opérateurs de comparaison (4/4)</h3>
+			Lorsqu'on utilise un opérateur de comparaison, le JavaScript va automatiquement comparer la valeur à gauche de l'opérateur à celle de droite. Il renverra <span class="accentued-2">true</span> si la comparaison est vérifiée et <span class="accentued-2">false</span> si elle ne l'est pas.
+		</section>
+		<section>
+			<h3>Conditions (1/5)</h3>
+			Les conditions en JavaScript permettent de prendre des décisions dans votre code en fonction de certaines conditions ou expréssions booléennes. Ces décisions permettent d'exécuter différentes parties de code en fonction des valeurs des variables ou des résultats des expressions.
+		</section>
+		<section>
+			<h3>Conditions (2/5) - Instruction if</h3>
+			L'instruction <span class="accentued-2">if</span> permet d'exécuter un bloc de code si une condition est vraie. Si la condition est fausse, le bloc de code est donc ignoré.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const age = 25;
+					if (age >= 18) {
+  						console.log("Vous êtes majeur !");
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Conditions (3/5) - Instruction else</h3>
+			L'instruction <span class="accentued-2">else</span> est utilisée avec <span class="accentued-2">if</span> pour exécuter un autre bloc de code si la condition <span class="accentued-2">if</span> est fausse.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const hour = 14;
+					if (hour < 12) {
+						console.log("Bonne matinée !");
+					} else {
+						console.log("Bonne après-midi !");
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Conditions (4/5) - Instruction else if</h3>
+			L'instruction <span class="accentued-2">else if</span> est utilisée pour tester plusieurs conditions à la suite. Si aucune des conditions précédentes n'est vraie, cette instruction permet de tester une autre condition.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const mark = 75;
+					if (mark >= 90) {
+						console.log("Excellent !");
+					} else if (mark >= 50) {
+						console.log("Bon travail !");
+					} else {
+						console.log("Vous pouvez faire mieux !");
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Conditions (5/5) - Instruction switch</h3>
+			L'instruction <span class="accentued-2">switch</span> est utilisée pour sélectionner un bloc de code à exécuter parmi plusieurs options en fonction de la valeur d'une expression.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const day = "lundi";
+					switch (day) {
+						case "lundi":
+							console.log("C'est le début de la semaine.");
+							break;
+						case "mardi":
+							console.log("C'est bientôt le week-end !");
+							break;
+						default:
+							console.log("C'est un autre jour de la semaine.");
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Opérateurs logiques (1/5)</h3>
+			Les opérateurs logiques en JavaScript sont utilisés pour combiner des expressions booléennes et effectuer des opérations logiques sur leurs valeurs. Ils sont couramment utilisés dans les conditions et les boucles pour effectuer des tests plus complexes.
+		</section>
+		<section>
+			<h3>Opérateurs logiques (2/5) - ET</h3>
+			L'opérateur logique <span class="accentued-2">&& (ET)</span> renvoie <span class="accentued-2">true</span> si toutes les expressions booléennes qu'il combine sont vraies. Sinon il renverra <span class="accentued-2">false</span>. Il effectue une évaluation paresseuse, ce qui signifie que si la première expression est <span class="accentued-2">fausse</span>, les expressions suivantes ne sont pas évaluées car le résultat global sera de tout façon <span class="accentued-2">false</span>.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const a = true;
+					const b = false;
+					const c = true;
+					console.log(a && b); // false
+					console.log(a && c); // true
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Opérateurs logiques (3/5) - OU</h3>
+			L'opérateur logique <span class="accentued-2">|| (OU)</span> renvoie <span class="accentued-2">true</span> si au moins l'une des expressions booléennes qu'il combine est vraie. S'il n'y a aucune expression vraie, il renverra <span class="accentued-2">false</span>. Comme le ET, il effectue une évaluation paresseuse, ce qui signifie que si la première expression est <span class="accentued-2">true</span>, les expressions suivantes ne sont pas évaluées car le résultat global sera de tout façon <span class="accentued-2">true</span>.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const a = true;
+					const b = false;
+					const c = false;
+					console.log(a || b); // true
+					console.log(b || c); // false
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Opérateurs logiques (4/5) - NON</h3>
+			L'opérateur logique <span class="accentued-2">! (NON)</span> renverse la valeur d'une expression booléenne. S'il est appliqué à <span class="accentued-2">true</span>, il renverra <span class="accentued-2">false</span> et s'il est appliqué à <span class="accentued-2">false</span>, il renverra <span class="accentued-2">true</span>.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const a = true;
+					const b = false;
+					console.log(!a); // false
+					console.log(!b); // true
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Opérateurs logiques (5/5)</h3>
+			Lorsqu'on combine plusieurs opérateurs logiques, il est important de comprendre leur précédence. L'opérateur <span class="accentued-2">! (NON)</span> a la plus haute précédence, suivi de <span class="accentued-2">&& (ET)</span>, et enfin l'opérateur <span class="accentued-2">|| (OU)</span>. Il est souvent recommandé d'utiliser des parenthèses pour clarifier les expressions logiques complexes.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const a = true;
+					const b = false;
+					const c = true;
+					console.log((a || b) && c); // true
+					console.log(a || (b && c)); // true
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Associativité des opérateurs</h3>
+			Les règles d'associativité des opérateurs déterminent l'ordre dans lequel les opérateurs sont effectués lorsqu'il y a plusieurs opérateurs du même type dans une expression. En JavaScript, les opérateurs ont des règles d'associativité spécifiques, qui dictent si les opérations doivent être évaluées de gauche à droite ou de droite à gauche.
+		</section>
+		<section>
+			<h3>Associativité et précédence (1/8)</h3>
+			Voici un tableau qui classe les opérateurs de la plus haute précédence (0) à la plus basse (10). Les opérateurs ayant le même chiffre de précédence vont être traités selon la même priorité et il faudra regarder leur associativité.
+		</section>
+		<section>
+			<h3>Associativité et précédence (2/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>0</td>
+						<td>Groupement</td>
+						<td><span class="accentued-2">(</span> ... <span class="accentued-2">)</span></td>
+						<td>N/A</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Post-incrémentation</td>
+						<td>...<span class="accentued-2"> ++</span></td>
+						<td>N/A</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Post-décrémentation</td>
+						<td>...<span class="accentued-2"> --</span></td>
+						<td>N/A</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Associativité et précédence (3/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2</td>
+						<td>NON</td>
+						<td><span class="accentued-2">! </span>...</td>
+						<td>Droite</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Pré-incrémentation</td>
+						<td><span class="accentued-2">++ </span>...</td>
+						<td>Droite</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Pré-décrémentation</td>
+						<td><span class="accentued-2">-- </span>...</td>
+						<td>Droite</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Associativité et précédence (4/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>3</td>
+						<td>Exponentiel</td>
+						<td>...<span class="accentued-2"> ** </span>...</td>
+						<td>Droite</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Multiplication</td>
+						<td>...<span class="accentued-2"> * </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Division</td>
+						<td>...<span class="accentued-2"> / </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Modulo</td>
+						<td>...<span class="accentued-2"> % </span>...</td>
+						<td>Gauche</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Associativité et précédence (5/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>4</td>
+						<td>Addition</td>
+						<td>...<span class="accentued-2"> + </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Soustraction</td>
+						<td>...<span class="accentued-2"> - </span>...</td>
+						<td>Gauche</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Associativité et précédence (6/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>5</td>
+						<td>Inférieur strict</td>
+						<td>...<span class="accentued-2"> &lt; </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Inférieur ou égal</td>
+						<td>...<span class="accentued-2"> &lt;= </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Supérieur strict</td>
+						<td>...<span class="accentued-2"> &gt; </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Supérieur ou égal</td>
+						<td>...<span class="accentued-2"> &gt;= </span>...</td>
+						<td>Gauche</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Associativité et précédence (7/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>6</td>
+						<td>Egalité (valeur)</td>
+						<td>...<span class="accentued-2"> == </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Inégalité</td>
+						<td>...<span class="accentued-2"> != </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Egalité (valeur et type)</td>
+						<td>...<span class="accentued-2"> === </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Inégalité (valeur et type)</td>
+						<td>...<span class="accentued-2"> !== </span>...</td>
+						<td>Gauche</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Associativité et précédence (8/8)</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Précédence</th>
+						<th>Nom</th>
+						<th>Symbole</th>
+						<th>Associativité</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>7</td>
+						<td>ET</td>
+						<td>...<span class="accentued-2"> && </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>OU</td>
+						<td>...<span class="accentued-2"> || </span>...</td>
+						<td>Gauche</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Ternaire</td>
+						<td>...<span class="accentued-2"> ? </span>...<span class="accentued-2"> : </span>...</td>
+						<td>Droite</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Affectation</td>
+						<td>...<span class="accentued-2"> = </span>...<br/> ...<span class="accentued-2"> += </span>...<br/>etc.</td>
+						<td>Droite</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
 	  </section>
 	  <section>
 		<section>
