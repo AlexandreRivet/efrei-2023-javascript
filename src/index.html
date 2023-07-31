@@ -1239,6 +1239,66 @@
 				</tbody>
 			</table>
 		</section>
+		<section>
+			<h3>Opérateur ternaire (1/2)</h3>
+			L'opérateur ternaire est un opérateur qui permet d'écrire des conditions de manière concise en JavaScript. Il est souvent utilisé pour prendre une décision simple et retourner une valeur en fonction d'une consition.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					// Syntaxe
+					const result = condition ? valueIfTrue : valueIfFalse
+					// Exemple
+					const age = 25;
+					const message = age >= 18 ? 'Majeur' : 'Mineur';
+					console.log(message); // 'Majeur'
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Opérateur ternaire (2/2)</h3>
+			L'opérateur ternaire est très utile lorsque vous avez une condition simple et que vous voulez attribuer une valeur en fonction de cette condition sans avoir à une utiliser une instruction <span class="accentued-2"> if ... else</span>.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					// Ternaire
+					let message = age >= 18 ? 'Majeur' : 'Mineur';
+					// if else plus classique
+					message = 'Mineur';
+					if (age >= 18) {
+						message = 'Majeur';
+					}
+				</script>
+			</code></pre>
+			A ne pas utiliser à outrance, car cela peut complexifier la lecture du code.
+		</section>
+		<section>
+			<h3>Opérateurs d'incrémentation et de décrémentation (1/3)</h3>
+			Les opérateurs d'incrémentation et de décrémentation en JavaScript sont utilisés pour augmenter ou diminuer la valeur d'une variable d'une unité. Ces opérateurs sont couramment utilisés dans les boucles et les calculs arithmétiques.
+		</section>
+		<section>
+			<h3>Opérateurs d'incrémentation et de décrémentation (2/3)</h3>
+			L'opérateur d'incrémentation <span class="accentued-2">++</span> augmente la valeur d'une variable numérique d'une unité. Lorsqu'il est placé avant la variable (pré-incrémentation), la variable est d'abord augmentée, puis la nouvelle valeur est renvoyée. Lorsqu'il est placé après (post-incrémentation), la valeur actuelle est renvoyée puis la variable est augmentée.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					let x = 5;
+					let y = ++x;
+					console.log(x, y); // 6, 6
+					let z = y++;
+					console.log(y, z); // 7, 6
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Opérateurs d'incrémentation et de décrémentation (3/3)</h3>
+			L'opérateur de décrémentation <span class="accentued-2">--</span> diminue la valeur d'une variable numérique d'une unité. Lorsqu'il est placé avant la variable (pré-décrémentation), la variable est d'abord diminuée, puis la nouvelle valeur est renvoyée. Lorsqu'il est placé après (post-décrémentation), la valeur actuelle est renvoyée puis la variable est diminuée.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					let x = 5;
+					let y = --x;
+					console.log(x, y); // 4, 4
+					let z = y--;
+					console.log(y, z); // 3, 4
+				</script>
+			</code></pre>
+		</section>
 	  </section>
 	  <section>
 		<section>
