@@ -386,7 +386,338 @@
 				}
 				myFunc(); // Erreur: la variable y n'est pas définie
 			</code></pre>
-			Les variables déclarées en var sont liées au bloc (ensemble de code entre {}). Elles gardent donc leur déclaration et leur affectation dans l'ordre où elles apparaissent dans le code.
+			Les variables déclarées en var sont liées au bloc (ensemble de code entre <span class="accentued-2">{}</span>). Elles gardent donc leur déclaration et leur affectation dans l'ordre où elles apparaissent dans le code.
+		</section>
+		<section>
+			<h3>Variables -  Types</h3>
+		</section>
+		<section>
+			<h4>Types (1/3)</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Number</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								let a = 1;
+								let b = -3.14;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>String</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let a = "Une chaîne de caractères";
+								let b = 'Une seconde avec "guillemets"';
+								let c = 'Une troisième avec \'apostrophes\'';
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:hidden;">Petite remarque, on peut utiliser <span class="accentued-2">'</span> ou <span class="accentued-2">"</span> pour délimiter une chaîne de caractères. Mais si la chaîne contient le même caractère que le délimiteur, il faudra l'échapper avec <span class="accentued-2">\</span>.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Types (2/3)</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Boolean</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let trueBool = true;
+								let falseBool = false;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>null</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let emptyVariable = null;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>undefined</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let undefinedVariable;
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Types (3/3)</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Object</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let obj1 = {};
+								let obj2 = new Object();
+							</code></pre>
+					</tr>
+					<tr>
+						<td>Symbol</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let symbol1 = Symbol();
+								let symbol2 = Symbol('My Symbole');
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Pour vérifier le type d'une variable, vous pouvez utiliser l'opérateur <span class="accentued-2">typeof</span>:
+			<br/>
+			<pre><code class="hljs javascript" data-trim>
+				console.log(typeof variableName);
+			</code></pre>
+		</section>
+		<section>
+			<h3>Variables - Opérateurs</h3>
+		</section>
+		<section>
+			<h4>Opérateurs arithmétiques (1/3)</h4>
+			<pre><code class="hljs javascript" data-trim>
+				let x = 10;
+				let y = 20;
+			</code></pre>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Opérateur</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Addition</td>
+						<td>+</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let result = x + y;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Soustraction</td>
+						<td>-</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let result = x - y;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Multiplication</td>
+						<td>*</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let result = x * y;
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Opérateurs arithmétiques (2/3)</h4>
+			<pre><code class="hljs javascript" data-trim>
+				let x = 10;
+				let y = 20;
+			</code></pre>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Opérateur</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Division</td>
+						<td>/</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let result = x / y;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Modulo</td>
+						<td>%</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let result = x % y;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Exponentielle</td>
+						<td>**</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let result = x ** y;
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Opérateurs arithmétiques (3/3)</h4>
+			Même règles qu'en mathématiques pour la priorité des calculs.
+			<pre><code class="hljs javascript" data-trim>
+				let x = 1 - 2 - 3; // -4
+				let y = 1 - (3 - 2 * 4); // 6
+				let z = 2 ** 3 ** 2; // 512
+			</code></pre>
+		</section>
+		<section>
+			<h4>Opérateurs d'affectation (1/2)</h4>
+			<pre><code class="hljs javascript" data-trim>
+				let x = 10;
+				let y = 20;
+			</code></pre>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Opérateur</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Assignation</td>
+						<td>=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								let z = 30;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Addition affectation</td>
+						<td>+=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								x += 10;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Soustraction affectation</td>
+						<td>-=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								y -= 10;
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Opérateurs d'affectation (2/2)</h4>
+			<pre><code class="hljs javascript" data-trim>
+				let x = 10;
+				let y = 20;
+			</code></pre>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Opérateur</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Multiplication affectation</td>
+						<td>*=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								x *= 10;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Division affectation</td>
+						<td>/=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								y /= 10;
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>Modulo affectation</td>
+						<td>%=</td>
+						<td>
+							<pre><code class="hljs javascript" data-trim>
+								x %= 10;
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Opérateur de concaténation (1/2)</h4>
+			La concaténation est le processus de combiner des chaînes de caractères pour former une nouvelle chaîne. Elle s'effectue avec l'opérateur +.
+			<pre><code class="hljs javascript" data-trim>
+				let a = 10;
+				let b = 20;
+				let c = '30';
+				let d = 'quarante';
+				let result1 = a + b; // 30
+				let result2 = 'j\'ai ' + result1 + 'ans'; // j'ai 30ans
+				let result3 = c + d; // 30quarante
+				let result4 = b + c; // 2030
+				let result5 = a + b + d; // 30quarante
+				let result6 = d + a + b; //quarante1020
+			</code></pre>
+			Il y a toujours la notion de priorité. Mais dès lors qu'il y a une chaîne de caractère, alors tout ce qui suit sera considéré comme chaînes de caractères.
+		</section>
+		<section>
+			<h4>Opérateur de concaténation (2/2) - Littéraux de gabarits</h4>
+			Il existe une troisième méthode pour entourer les chaînes de caractères: <span class="accentued-2">`</span>. La grande différence avec les deux autres méthodes c'est que JavaScript va interpréter les expressions à l'intérieur et les remplacer. 
+			<pre><code class="hljs javascript" data-trim>
+				let a = 10;
+				let b = 20;
+				console.log(`a (${a}) + b (${b}) = ${a + b}`); // "a (10) + b (20) = 30"
+				// vs qui produit la même chose mais en moins éléguant
+				console.log('a (' + a + ') + b (' + b + ') = ' + (a + b));
+			</code></pre>
 		</section>
 	  </section>
 	  <section>
