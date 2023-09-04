@@ -1299,15 +1299,214 @@
 				</script>
 			</code></pre>
 		</section>
+		<section>
+			<h3>Les boucles</h3>
+			Les boucles en JavaScript sont des structures de contrôle qui permettent d'exécuter des blocs de code plusieurs fois,
+			en fonction des conditions ou d'un nombre prédéfini d'itérations.
+			<br />Les boucles sont essentielles pour automatiser des tâches répétitives et pour traiter des ensembles de données.
+		</section>
+		<section>
+			<h3>La boucle for</h3>
+			La boucle <span class="accentued-2">for</span> est utilisée lorsque vous connaissez à l'avance le nombre d'itérations
+			que vous souhaitez effectuer.
+			<br/>Elle se compose en trois parties: l'initialisation, la condition et l'expression d'incrémentation ou décrémentation.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					for (let i = 0; i < 5; i++) {
+						console.log(i);
+					}					  
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>La boucle while</h3>
+			La boucle <span class="accentued-2">while</span> est utilisée lorsque vous souhaitez répéter un bloc de code tant qu'une
+			condition est vraie. La condition est vérifiée avant chaque itération.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					let count = 0;
+					while (count < 5) {
+						console.log(count);
+						count++;
+					}  
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>La boucle do ... while</h3>
+			La boucle <span class="accentued-2">do ... while</span> est similaire à la boucle <span class="accentued-2">while</span>,
+			mais elle garantit que le bloc de code est exécuté au moins une fois, même si la condition est fausse dès le départ.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					let x = 1;
+					do {
+						console.log(x);
+						x++;
+					} while (x <= 5);
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>La boucle for ... of</h3>
+			La boucle <span class="accentued-2">for ... of</span> permet de parcourir les éléments d'une collection, comme un
+			tableau, sans se soucier des indices.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const nombres = [1, 2, 3, 4, 5];
+					for (const nombre of nombres) {
+						console.log(nombre);
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>La boucle for ... in</h3>
+			La boucle <span class="accentued-2">for ... in</span> permet de parcourir les propriétés d'un objet.
+			Cependant, il est recommandé de l'utiliser principalement pour les objets, et non les tableaux.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const person = {
+						nom: "Alice",
+						age: 30,
+						profession: "Développeuse"
+					};
+					  
+					for (const prop in person) {
+						console.log(`${prop}: ${person[prop]}`);
+					}				  
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Instructions break et continue</h3>
+			L'instruction <span class="accentued-2">break</span> est utilisée pour sortir prématurément d'une boucle, tandis
+			que l'instruction <span class="accentued-2">continue</span> est utilisée pour passer à l'itération suivante sans
+			exécuter le reste du code dans le bloc de boucle pour cette itération.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					for (let i = 1; i <= 10; i++) {
+						if (i === 5) {
+							break; // Sort de la boucle lorsque i atteint 5
+						}
+						if (i === 3) {
+							continue; // Passe à l'itération suivante lorsque i est égal à 3
+						}
+						console.log(i);
+					}				
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Les boucles</h3>
+			Il est très important de faire attention à ne pas créer de boucles infinies (qui ne se terminent jamais) et de
+			s'assurer que les conditions de sortie sont correctement définies pour éviter tous problèmes.
+		</section>
 	  </section>
 	  <section>
 		<section>
 			<h2>Fonctions</h2>
 		</section>
+		<section>
+			<h3>Présentation</h3>
+			Les fonctions en JavaScript sont des blocs de code nommés et réutilisables qui effectuent une tâche spécifique
+			ou calcule une valeur et peuvent être appelées à partir d'autres parties de code. Elles jouent un rôle central
+			dans la structuration et la modularité du code.
+		</section>
+		<section>
+			<h3>Définition</h3>
+			Une fonction est définie en utilisant le mot-clé <span class="accentued-2">function</span>, suivi du nom de la
+			fonction (identificateur), d'une liste d'arguments entre parenthèses, et du bloc de code à exécuter entre 
+			accolades. Les arguments sont les valeurs que vous passez à la fonction pour qu'elle les utilise dans son traitement.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					function functionName(argument1, argument2) {
+						// Bloc de code à exécuter
+					}							  
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Appel d'une fonction</h3>
+			Une fois définie, une fonction peut être appelée en utilisant son nom, suivi des parenthèses. Les valeurs spécifiées
+			dans l'appel sont transmises aux paramètres correspondants de la fonction.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					functionName(valeurArgument1, valeurArgument2);
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Valeur de retour</h3>
+			Une fonction peut retourner une valeur à l'endroit où elle est appelée à l'aide du mot-clé <span class="accentued-2">return</span>.
+			Si aucune valeur n'est renvoyée, la fonction renverra automatiquement <span class="accentued-2">undefined</span>.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					function sum(a, b) {
+						return a + b;
+					}
+					
+					const result = sum(5, 3); // Appel de la fonction et récupération du résultat
+					console.log(result); // Résultat : 8					  
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Portée des variables</h3>
+			Les variables déclarées à l'intérieur d'une fonction ont une portée locale, ce qui signifie
+			qu'elles ne sont accessibles que dans le contexte de la fonction. Cela permet d'éviter les conflits
+			de noms et d'isoler les variables du reste du programme.
+		</section>
+		<section>
+			<h3>Fonctions anonymes</h3>
+			Une fonction anonyme en JavaScript est une fonction qui n'a pas de nom associée. Elle est définie sans spécifier
+			d'identificateur après le mot-clé <span class="accentued-2">function</span>. Les fonctions anonymes son souvent
+			utilisées dans des contexte où une fonction est nécessaire pour une tâche spécifique, mais où il n'est pas nécessaire
+			de lui donner un nom distinct.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					// Définition d'une fonction anonyme stockée dans la variable square
+					const square = function(x) {
+						return x ** 2;
+					};
+					// Utilisation de la fonction anonyme
+					const result = carre(4);
+					console.log(result); // Résultat : 16
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Fonctions fléchées</h3>
+			Les fonctions fléchées sont une syntaxe plus concise pour définir des fonctions en JavaScript. Elles 
+			sont particulières utiles pour les fonctions courtes et n'ont pas leur propre contexte (<span class="accentued-2">this</span>)
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const square = x => x ** 2;
+					console.log(square(4)); // Résultat : 16
+				</script>
+			</code></pre>
+		</section>
 	  </section>
 	  <section>
 		<section>
-			<h2>Objets et tableaux</h2>
+			<h2>Programmation orientée objet</h2>
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Procédurale</h3>
+			La programmation procédurale est un paradigme de programmation qui se concentre sur l'écriture de code en
+			organisant les instructions en procédures ou fonctions. Chaque procédure représente une série d'instructions 
+			qui effectuent une tâche spécifique. Ce paradigme vise à diviser un programme en blocs de code réutilisables, 
+			ce qui facilite la maintenance, la lisibilité et la réutilisation du code.
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Fonctionnelle</h3>
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
+		</section>
+	  </section>
+	  <section>
+		<section>
+			<h2>Valeurs</h2>
 		</section>
 	  </section>
 	  <section>
@@ -1318,11 +1517,6 @@
 	  <section>
 		<section>
 			<h2>Gestion des erreurs</h2>
-		</section>
-	  </section>
-	  <section>
-		<section>
-			<h2>Programmation orientée objet</h2>
 		</section>
 	  </section>
 	  <section>
