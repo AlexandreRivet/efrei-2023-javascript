@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>First Project HTML</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		
+		pre {
+			margin: 0;
+		}
+	</style>
+
+	<link rel="stylesheet" href="../../libs/tabjs/css/tabjs.css">
+	<link rel="stylesheet" href="../../libs/highlightjs/css/zenburn.css">
+</head>
+<body>
+	<script type="text/javascript" src="../../libs/tabjs/tab.js"></script>
+	<script type="text/javascript" src="../../libs/highlightjs/highlight.js"></script>
+	<script>
+		hljs.highlightAll();
+		tabjs.initTabOnLoad(window.location.href);
+
+		tabjs.loadTabs('/config.json', function(iElement) {
+			if (iElement.classList.contains('hljs')) {
+				debugger;
+				hljs.highlightElement(iElement);
+			}
+		});
+	</script>
+
+</body>
+
+</html>

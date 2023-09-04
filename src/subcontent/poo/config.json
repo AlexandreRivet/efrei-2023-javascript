@@ -1,0 +1,27 @@
+[
+    {
+        "type": "iframe",
+        "filepath": "./result.html",
+        "id": "result",
+        "name": "Résultat"
+    },
+	{
+		"type": "html",
+		"filepath": "./result.html",
+		"id": "index-html",
+		"name": "index.html"
+	},
+    {
+		"type": "javascript",
+		"filepath": "./pets.js",
+		"id": "pets-js",
+		"name": "pets.js"
+	},
+	{
+		"type": "javascript",
+		"filepath": "./main.js",
+		"id": "main-js",
+		"name": "main.js",
+		"defaultOpened": true
+	}
+]

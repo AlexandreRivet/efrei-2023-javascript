@@ -57,8 +57,6 @@ var tabjs = {
 
 			iframe.onload = function () {
 				let mutationObserver = new MutationObserver(records => {
-					console.log(records);
-					console.log(iframe.contentWindow.document.documentElement.scrollHeight);
 					iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
 				});
 				mutationObserver.observe(iframe.contentWindow.document.body, { childList: true, subtree: true });
@@ -72,26 +70,25 @@ var tabjs = {
 			var code = document.createElement('code');
 			code.classList.add('hljs');
 			code.classList.add(iTabData.type);
+			code.setAttribute('data-trim', '');
+			var script = document.createElement('script');
+			script.setAttribute('type', 'text/template');
 			pre.appendChild(code);
+			code.appendChild(script);
 			tabContent.appendChild(pre);
 			
-			this.loadFileInTabContent(iTabData.filepath, code)
-				.then(iElement => {
+			this.loadFileInTabContent(iTabData.filepath, script)
+				.then(() => {
 					if (iCallback) {
-						iCallback(iElement);
+						iCallback(code);
 					}
 				});
 		}
 	},
 	loadFileInTabContent(iURL, iElement) {
-		var extension = iURL.substring(iURL.lastIndexOf('.') + 1);
 		return this._loadText(iURL)
 			.then(response => {
 				return new Promise(resolve => {
-					if (extension === "html") {
-						response = response.replace(/</g, "&lt;");
-						response = response.replace(/>/g, "&gt;");
-					}
 					iElement.innerHTML = response;
 					resolve(iElement);
 				});
