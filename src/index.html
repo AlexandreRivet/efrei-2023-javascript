@@ -335,7 +335,7 @@
 				let age;
 			</code></pre>
 			Le comportement de hoisting a été jugé inadapté et a donc été corrigé dans les déclarations avec let.
-			<br />Le but est toujours d'améliorer le code et d'en créer plus compréhensible et plsu clair avec la bonne structure.
+			<br />Le but est toujours d'améliorer le code et d'en créer plus compréhensible et plus clair avec la bonne structure.
 		</section>
 		<section>
 			<h4>let & var (5/8)</h4>
@@ -371,7 +371,7 @@
 				}
 				myFunc(); // Affiche 10
 			</code></pre>
-			Les variables déclarées en var sont fonctionnelles (portée dans une fonction), ce qui signifie qu'elles sont liées à la fonction dans laquelle elles sont déclarées (ou globales si déclarées en dehors de tout fonction)
+			Les variables déclarées en <span class="accentued-2">var</span> sont fonctionnelles (portée dans une fonction), ce qui signifie qu'elles sont liées à la fonction dans laquelle elles sont déclarées (ou globales si déclarées en dehors de tout fonction)
 		</section>
 		<section>
 			<h4>let & var (8/8)</h4>
@@ -386,7 +386,7 @@
 				}
 				myFunc(); // Erreur: la variable y n'est pas définie
 			</code></pre>
-			Les variables déclarées en var sont liées au bloc (ensemble de code entre <span class="accentued-2">{}</span>). Elles gardent donc leur déclaration et leur affectation dans l'ordre où elles apparaissent dans le code.
+			Les variables déclarées en <span class="accentued-2">let</span> sont liées au bloc (ensemble de code entre <span class="accentued-2">{}</span>). Elles gardent donc leur déclaration et leur affectation dans l'ordre où elles apparaissent dans le code.
 		</section>
 		<section>
 			<h3>Variables -  Types</h3>
@@ -933,7 +933,7 @@
 		</section>
 		<section>
 			<h3>Opérateurs logiques (2/5) - ET</h3>
-			L'opérateur logique <span class="accentued-2">&& (ET)</span> renvoie <span class="accentued-2">true</span> si toutes les expressions booléennes qu'il combine sont vraies. Sinon il renverra <span class="accentued-2">false</span>. Il effectue une évaluation paresseuse, ce qui signifie que si la première expression est <span class="accentued-2">fausse</span>, les expressions suivantes ne sont pas évaluées car le résultat global sera de tout façon <span class="accentued-2">false</span>.
+			L'opérateur logique <span class="accentued-2">&& (ET)</span> renvoie <span class="accentued-2">true</span> si toutes les expressions booléennes qu'il combine sont vraies. Sinon il renverra <span class="accentued-2">false</span>. Il effectue une évaluation paresseuse, ce qui signifie que si la première expression est <span class="accentued-2">fausse</span>, les expressions suivantes ne sont pas évaluées car le résultat global sera de toute façon <span class="accentued-2">false</span>.
 			<pre><code class="hljs javascript" data-trim>
 				<script type="text/template">
 					const a = true;
@@ -946,7 +946,7 @@
 		</section>
 		<section>
 			<h3>Opérateurs logiques (3/5) - OU</h3>
-			L'opérateur logique <span class="accentued-2">|| (OU)</span> renvoie <span class="accentued-2">true</span> si au moins l'une des expressions booléennes qu'il combine est vraie. S'il n'y a aucune expression vraie, il renverra <span class="accentued-2">false</span>. Comme le ET, il effectue une évaluation paresseuse, ce qui signifie que si la première expression est <span class="accentued-2">true</span>, les expressions suivantes ne sont pas évaluées car le résultat global sera de tout façon <span class="accentued-2">true</span>.
+			L'opérateur logique <span class="accentued-2">|| (OU)</span> renvoie <span class="accentued-2">true</span> si au moins l'une des expressions booléennes qu'il combine est vraie. S'il n'y a aucune expression vraie, il renverra <span class="accentued-2">false</span>. Comme le ET, il effectue une évaluation paresseuse, ce qui signifie que si la première expression est <span class="accentued-2">true</span>, les expressions suivantes ne sont pas évaluées car le résultat global sera de toute façon <span class="accentued-2">true</span>.
 			<pre><code class="hljs javascript" data-trim>
 				<script type="text/template">
 					const a = true;
@@ -1863,6 +1863,136 @@
 		</section>
 		<section>
 			<h3>Number</h3>
+		</section>
+		<section>
+			<h4>Propriétés</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>MIN_VALUE & MAX_VALUE</td>
+						<td>Plus petites et plus grandes valeurs numériques possibles</td>
+					</tr>
+					<tr>
+						<td>MIN_SAFE_INTEGER & MAX_SAFE_INTEGER</td>
+						<td>Plus petites et plus grandes valeurs numériques "sûres" numériques pour pouvoir faire des comparaisons.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Propriétés</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>NEGATIVE_INFINITY & POSITIVE_INFINITY</td>
+						<td>Infini négatif et infini positif</td>
+					</tr>
+					<tr>
+						<td>NaN</td>
+						<td>Représente toute valeur qui n'est pas un nombre (Not A Number)</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>isFinite</td>
+						<td>Retourne si un nombre est fini</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Number.isFinite(10));
+								// true
+								console.log(
+									Number.isFinite(Number.POSITIVE_INFINITY)
+								);
+								// false
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>isNaN</td>
+						<td>Retourne si la valeur est NaN</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Number.isNaN(10));
+								// false
+								console.log(Number.isNaN('string'));
+								// false
+								console.log(Number.isNaN(Number.NaN));
+								// true
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>parseInt</td>
+						<td>Convertit une chaîne en entier dans la base souhaitée</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Number.parseInt('321', 10));
+								// 321
+								console.log(Number.parseInt('100', 2));
+								// 4
+								console.log(Number.parseInt('string', 10));
+								// NaN
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>parseFloat</td>
+						<td>Convertit une chaîne en nombre flottant</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Number.parseFloat('3.14'));
+								// 3.14
+								console.log(Number.parseFloat('10.5days'));
+								// 10.5
+								console.log(Number.parseFloat('string'));
+								// NaN
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			Toutes la documentation sur l'objet Number en JavaScript est disponible <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">ici</a>
+			avec les explications complètes.
 		</section>
 		<section>
 			<h3>Math</h3>
