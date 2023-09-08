@@ -1491,14 +1491,14 @@
 			<h2>Programmation orientée objet</h2>
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Procédurale (1/3)</h3>
+			<h3>Paradigmes de programmation - Procédurale</h3>
 			La programmation procédurale est un paradigme de programmation qui se concentre sur l'écriture de code en
 			organisant les instructions en procédures ou fonctions. Chaque procédure représente une série d'instructions 
 			qui effectuent une tâche spécifique. Ce paradigme vise à diviser un programme en blocs de code réutilisables, 
 			ce qui facilite la maintenance, la lisibilité et la réutilisation du code.
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Procédurale (2/3)</h3>
+			<h3>Paradigmes de programmation - Procédurale</h3>
 			<h4>Caractéristiques</h4>
 			<ul>
 				<li>Organisé en fonctions</li>
@@ -1508,7 +1508,7 @@
 			</ul>
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Procédurale (3/3)</h3>
+			<h3>Paradigmes de programmation - Procédurale</h3>
 			<h4>Exemple</h4>
 			<pre><code class="hljs javascript" data-trim>
 				<script type="text/template">
@@ -1524,13 +1524,13 @@
 			</code></pre>
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Fonctionnelle (1/3)</h3>
+			<h3>Paradigmes de programmation - Fonctionnelle</h3>
 			La programmation fonctionnelle est un paradigme de programmation qui se concentre sur l'utilisation des fonctions
 			de manière plus fondamentale et prééminente que dans d'autres paradigmes. La programmation fonctionnelle favorise
 			la simplicité, la prévisibilité et la facilité de test.
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Fonctionnelle (2/3)</h3>
+			<h3>Paradigmes de programmation - Fonctionnelle</h3>
 			<h4>Caractéristiques</h4>
 			<ul>
 				<li>Fonctions pures</li>
@@ -1540,7 +1540,7 @@
 			</ul>
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Fonctionnelle (3/3)</h3>
+			<h3>Paradigmes de programmation - Fonctionnelle</h3>
 			<h4>Exemple</h4>
 			<pre><code class="hljs javascript" data-trim>
 				<script type="text/template">
@@ -1558,30 +1558,142 @@
 			</code></pre>
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Orientée objet (1/3)</h3>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
 			La programmation orientée objet (POO) est un paradigme de programmation qui se base sur la notion d'objets, qui sont
 			des instances de classes. Le code est orienté autour d'entités autonomes appelés objets, et ces objets interagissent
 			entre eux en utilisant des méthodes (fonctions) et des propriétés (variables)
 		</section>
 		<section>
-			<h3>Paradigmes de programmation - Orientée objet (2/3)</h3>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
 			<h4>Caractéristiques</h4>
 			<ul>
-				<li>Classes</li>
-				<li>Objets</li>
+				<li>Objets ou Classes</li>
 				<li>Propriétés</li>
 				<li>Méthodes</li>
 				<li>Héritage</li>
 			</ul>
 		</section>
-		<section data-iframe-src="./subcontent/poo">
-			<h3>Paradigmes de programmation - Orientée objet (3/3)</h3>
-			<h4>Exemple</h4>
+		<section>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
+			<h4>Exemple - Objets</h4>
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const user = {
+						name: 'John Doe',
+						age: 29,
+						mail: 'john.doe@efrei.com',
+						hello: function() {
+							// On observe l'utilisation de this qui permet d'accéder à
+							// l'objet couramment utilisé
+							alert(`Hi, my name is ${this.name}, and I am ${this.age} years old.`);
+						}
+					}
+
+					// On peut accéder ou éditier en accédant aux propriétés ou membres
+					alert(user.mail); 
+					alert(user['mail']); // Autre manière d'y accéder
+					user.hello(); // On peut appeler les méthodes de notre objet
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
+			<h4>Exemple - Fonctions constructeur</h4>
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					// Constructeur d'objets
+					function User(name, age, mail) {
+						this.name = name;
+						this.age = age;
+						this.mail = mail;
+						this.hello = function() {
+							alert(`Hi, my name is ${this.name}, and I am ${this.age} years old.`);
+						}
+					}
+
+					// Instance d'objets, on pourrait en instancier autant que l'on souhaite
+					const firstUser = new User('John Doe', 29, 'john.doe@efrei.com');
+
+					alert(firstUser.mail); 
+					alert(firstUser['mail']);
+					firstUser.hello();
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
+			<h4>Exemple - Prototypes</h4>
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					// Constructeur d'objets
+					function User(name, age, mail) {
+						this.name = name;
+						this.age = age;
+						this.mail = mail;
+					}
+
+					// Permet de ne pas dupliquer la méthode hello pour chaque instance
+					// mais de la partager et qui sera exécuté en fonction du this
+					User.prototype.hello = function() {
+						alert(`Hi, my name is ${this.name}, and I am ${this.age} years old.`);
+					}
+
+					const firstUser = new User('John Doe', 29, 'john.doe@efrei.com');
+					alert(firstUser.mail); 
+					alert(firstUser['mail']);
+					firstUser.hello();
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
+			<h4>Exemple - Classes (1/2)</h4>
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					class Line {
+						constructor(length) {
+							this.length = length;
+						}
+
+						size() {
+							alert(`My size is ${this.length}`);
+						}
+					}
+
+					class Rect extends Line {
+						constructor(width, height) {
+							super(width);
+							this.height = height;
+						}
+
+						area() {
+							alert(`My area is ${this.length * this.height}`);
+						}
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h3>Paradigmes de programmation - Orientée objet</h3>
+			<h4>Exemple - Classes (2/2)</h4>
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					const line1 = new Line(10);
+					const line2 = new Line(20);
+					line1.size();
+					line2.size();
+
+					const rect1 = new Rect(10, 20);
+					const rect2 = new Rect(20, 50);
+					rect1.area();
+					rect2.area();
+				</script>
+			</code></pre>
 		</section>
 	  </section>
 	  <section>
 		<section>
-			<h2>Valeurs</h2>
+			<h2>Valeurs primitives et objets globaux</h2>
 		</section>
 	  </section>
 	  <section>
