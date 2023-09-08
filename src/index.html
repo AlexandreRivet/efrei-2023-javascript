@@ -1695,6 +1695,181 @@
 		<section>
 			<h2>Valeurs primitives et objets globaux</h2>
 		</section>
+		<section>
+			<h3>String</h3>
+		</section>
+		<section>
+			<h4>Propriétés</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>length</td>
+						<td>Longueur de la chaîne de caractères</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.length);
+								// 17
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>toUpperCase</td>
+						<td>Mettre en majuscule</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.toUpperCase());
+								// AN AMAZING STRING
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>toLowerCase</td>
+						<td>Mettre en minuscule</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'AN AMAZING STRING';
+								console.log(myStr.toLowerCase());
+								// an amazing string
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>includes</td>
+						<td>Si une chaîne est contenue dans une autre</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.includes('amazing'));
+								// true
+								console.log(myStr.includes('awesome'));
+								// false
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>startsWith & endsWith</td>
+						<td>Commence ou termine pas une autre chaîne</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.startsWith('An'));
+								// true
+								console.log(myStr.startsWith('AN'));
+								// false
+								console.log(myStr.endsWith('string'));
+								// true
+								console.log(myStr.endsWith('STRING'));
+								// false
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>substring</td>
+						<td>Extrait une sous-chaîne</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.substring(3, 10));
+								// amazing
+								console.log(myStr.substring(3));
+								// amazing string
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>indexOf</td>
+						<td>Indice de la première occurrence</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.indexOf('amazing'));
+								// 3
+								console.log(myStr.indexOf('awesome'));
+								// -1
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>replace</td>
+						<td>Remplace la première correspondance par une autre</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const myStr = 'An amazing string';
+								console.log(myStr.replace('a', 'e'));
+								// An emazing string
+								
+								// replaceAll si on veut remplacer
+								// toutes les correspondances
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			Toutes la documentation sur l'objet String en JavaScript est disponible <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">ici</a>
+			avec les explications complètes.
+		</section>
+		<section>
+			<h3>Number</h3>
+		</section>
+		<section>
+			<h3>Math</h3>
+		</section>
+		<section>
+			<h3>Array</h3>
+		</section>
 	  </section>
 	  <section>
 		<section>
