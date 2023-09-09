@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "reveal.js": "^4.5.0",
-    "serve": "^14.2.0"
+    "serve": "^14.2.1"
   }
 }

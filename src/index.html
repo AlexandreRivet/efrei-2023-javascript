@@ -1998,7 +1998,475 @@
 			<h3>Math</h3>
 		</section>
 		<section>
+			<h4>Propriétés</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>PI</td>
+						<td>Valeur de PI</td>
+					</tr>
+					<tr>
+						<td>LN2 & LN10</td>
+						<td>Logarithme de 2 et 10</td>
+					</tr>
+					<tr>
+						<td>LOG2E & LOG10E</td>
+						<td>Logarithme de e en base 2 et 10</td>
+					</tr>
+					<tr>
+						<td>E</td>
+						<td>Nombre d'Euler</td>
+					</tr>
+					<tr>
+						<td>SQRT2 & SQRT1_2</td>
+						<td>Racine carrée de 2 et 1/2</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>floor</td>
+						<td>Arrondit à l'entier inférieur</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.floor(10.2)); // 10
+								console.log(Math.floor(10.999)); // 10
+								console.log(Math.floor(-2.8)); // -3
+								console.log(Math.floor(-2.2)); // -3
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>ceil</td>
+						<td>Arrondit à l'entier supérieur</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.ceil(10.2)); // 11
+								console.log(Math.ceil(10.999)); // 11
+								console.log(Math.ceil(-2.8)); // -2
+								console.log(Math.ceil(-2.2)); // -2
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>ceil</td>
+						<td>Arrondit à l'entier le plus proche</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.round(10.2)); // 10
+								console.log(Math.round(10.999)); // 11
+								console.log(Math.round(-2.8)); // -3
+								console.log(Math.round(-2.2)); // -2
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>trunc</td>
+						<td>Enlève la partie décimale</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.floor(10.2)); // 10
+								console.log(Math.floor(10.999)); // 10
+								console.log(Math.floor(-2.8)); // -2
+								console.log(Math.floor(-2.2)); // -2
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>random</td>
+						<td>Retourne un nombre entre 0 et 1 et de manière pseudo aléatoire</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								// un nombre entre 0 et 1
+								console.log(Math.random());
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>min</td>
+						<td>Le plus petit nombre</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								// 1.2
+								console.log(Math.min(10, 20.5, 2.8, 90, 1.2));
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>max</td>
+						<td>Le plus grand nombre</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								// 90
+								console.log(Math.max(10, 20.5, 2.8, 90, 1.2));
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>abs</td>
+						<td>Valeur absolue</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.abs(10)); // 10
+								console.log(Math.abs(-10)); // 10
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>cos</td>
+						<td>Cosinus</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.cos(0)); // 1
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>sin</td>
+						<td>Sinus</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.sin(0)); // 0
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>tan</td>
+						<td>Tangente</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.tan(0)); // 0
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>acos</td>
+						<td>Arc cosinus</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.acos(0)); // Math.PI * 0.5
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>asin</td>
+						<td>Arc sinus</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.asin(0)); // 0
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>atan</td>
+						<td>Arc tangente</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								console.log(Math.atan(0)); // 0
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			Toutes la documentation sur l'objet Math en JavaScript est disponible <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">ici</a>
+			avec les explications complètes.
+		</section>
+		<section>
 			<h3>Array</h3>
+		</section>
+		<section>
+			<h4>Présentation</h4>
+			En JavaScript, un tableau est une structure de données utilisée pour stocker et manipuler une collection de valeurs. Les tableaux sont l'un des types
+			de données fondamentaux en JavaScript et sont très polyvalents.
+		</section>
+		<section>
+			<h4>Création</h4>
+			Pour instancier un tableau, on va utiliser les crochets <span class="accentued-2">[</span>...<span class="accentued-2">]</span>.
+			Il existe une autre syntaxe avec <span class="accentued-2">new Array()</span> mais qui est moins performante.
+			<pre><code class="hljs javscript" data-trim>
+				const numbers = [1, 2, 3, 4, 5];
+				const fruits = ['apple', 'banana', 'cherry'];
+			</code></pre>
+		</section>
+		<section>
+			<h4>Accès à une valeur</h4>
+			Quand on crée un tableau, un indice est associé à chaque valeur du tableau. Chaque indice est unique et permet d'identifier et accéder à la valeur
+			qui lui est associée. L'indice 0 est automatiquement associé à la première valeur, l'indice 1 à la deuxième et ainsi de suite. Pour accéder à la
+			une valeur, il faut préciser le nom du tableau puis l'indice associé entre crochets.
+			<pre><code class="hljs javscript" data-trim>
+				const fruits = ['apple', 'banana', 'cherry'];
+				console.log(fruits[0]); // apple
+				console.log(fruits[2]); // cherry
+				fruits[2] = 'pear';
+				console.log(fruits[2]); // pear
+			</code></pre>
+		</section>
+		<section>
+			<h4>Parcours d'un tableau</h4>
+			On peut parcourir un tableau de plusieurs manières:
+			
+			<pre><code class="hljs javscript" data-trim>
+				<script type="text/template">
+					const fruits = ['apple', 'banana', 'cherry'];
+					for (const fruit of fruits) {
+						console.log(fruit);
+					}
+
+					for (let i = 0, iLen = fruits.length; i < iLen; i += 1) {
+						console.log(fruits[i]);
+					}
+				</script>
+			</code></pre>
+			Si on souhaite connaître le nombre d'éléments d'un tableau on peut y accéder via la propriété <span class="accentued-2">length</span>
+			<pre><code class="hljs javscript" data-trim>
+				const fruits = ['apple', 'banana', 'cherry'];
+				console.log(fruits.length); // 3
+			</code></pre>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>push</td>
+						<td>Ajout d'un élément en fin de tableau</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								fruits.push('pear');
+								console.log(fruits);
+								// apple, banana, cherry, pear
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>pop</td>
+						<td>Supprime le dernier élément du tableau</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								fruits.pop();
+								console.log(fruits);
+								// apple, banana
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>unshift</td>
+						<td>Ajout d'un élément en début de tableau</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								fruits.unshift('pear');
+								console.log(fruits);
+								// pear, apple, banana, cherry
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>shift</td>
+						<td>Supprime le premier élément du tableau</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								fruits.shift();
+								console.log(fruits);
+								// banana, cherry
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>splice</td>
+						<td>Ajout, supprime ou remplace une partie d'un tableau</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								fruits.splice(1, 0, 'pear');
+								console.log(fruits);
+								// apple, pear, banana, cherry
+								fruits.splice(2, 1);
+								console.log(fruits);
+								// apple, pear, cherry
+								fruits.splice(1, 1, 'strawberry');
+								console.log(fruits);
+								// apple, strawberry, cherry
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>slice</td>
+						<td>Renvoie un nouveau tableau découpé</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								console.log(fruits.slice(1)); // banana, cherry
+								console.log(fruits.slice(0, 1)); // apple
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>indexOf</td>
+						<td>Renvoie le premier indice d'un élément trouvé</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								console.log(fruits.indexOf('banana')); // 1
+								console.log(fruits.indexOf('pear')); // -1
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Méthodes</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Description</th>
+						<th>Exemples</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>includes</td>
+						<td>Renvoie so le tableau contient une valeur</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								console.log(fruits.includes('banana')); // true
+								console.log(fruits.includes('pear')); // false
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>join</td>
+						<td>Crée une chaîne en concaténant les valeurs</td>
+						<td>
+							<pre><code class="hljs javscript" data-trim>
+								const fruits = ['apple', 'banana', 'cherry'];
+								console.log(fruits.join(','));
+								// apple,banana,cherry
+							</code></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			Toutes la documentation sur les Array en JavaScript est disponible <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">ici</a>
+			avec les explications complètes.
 		</section>
 	  </section>
 	  <section>
