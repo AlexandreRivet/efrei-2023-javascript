@@ -2473,6 +2473,237 @@
 		<section>
 			<h2>Manipulation du DOM</h2>
 		</section>
+		<section>
+			<h3>Présentation</h3>
+			Le DOM ou Document Model Object est une représentation hiérarchique et structurée d'une page web. Il s'agit d'une interface de programmation
+			qui permet aux langages de script, tels que JavaScript, d'interagir avec le contenu et la structure d'une page HTML. Le DOM représente le 
+			document en tant qu'arbre d'objets, où chaque élément de la page est représenté par un noeud dans cet arbre.
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (1/x)</h3>
+			<pre><code class="hljs javascript" data-trim>
+				window.document
+				// ou simplement document 
+				document
+			</code></pre>
+			<i>DOM Properties</i>
+			<br/>
+			<pre><code class="hljs javascript" data-trim>
+				document.head // la balise head
+				document.body // la balise body
+				document.title // titre de la page
+				document.URL // url de la page
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (2/x)</h3>
+			<i>Méthodes</i>
+			<pre><code class="hljs javascript" data-trim>
+				// Permet d'obtenir le noeud avec l'id spécifié
+				document.getElementById("some-id");
+				
+				// Permet d'obtenir tous les éléments d'une classe donnée
+				document.getElementsByClassName("some-class");
+				
+				// Permet d'obtenir tous les éléments d'une balise précise
+				document.getElementsByTagName("div");
+				
+				// Permet d'obtenir le premiet élément qui correspond au sélecteur demandé
+				document.querySelector("div .some-class");
+				
+				// Permet d'obtenir tous les éléments qui correspondent au sélecteur demandé
+				document.querySelectorAll("div .some-class");
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (3/x)</h3>
+			<i>Elément DOM</i>
+			<br/>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Page MDN</a>
+			<br/>
+			<pre><code class="hljs javascript" data-trim>
+				// Modifie le contenu même de l'élément trouvé
+				document.querySelector(".some-class").innerHTML = 'some new content';
+				
+				// Modifie le contenu de l'élément trouvé (incluant la balise)
+				document.querySelector(".some-class").outerHTML = 
+					'<span class="some-class">some new content</span>';
+					
+				// Modifie l'id de l'élément trouvé
+				document.querySelector(".some-class").id = "some-id";
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (4/x)</h3>
+			<i>Classes</i>
+			<br/>
+			<pre><code class="hljs javascript" data-trim>
+				// Récupère les classes de l'élément
+				// Cette propriété est en lecture seule
+				const classes = document.querySelector("#some-element").classList;
+				
+				// Ajout une nouvelle classe
+				classes.add("some-new-class");
+				
+				// Supprime une classe
+				classes.remove("some-new-class");
+				
+				// Inverse une classe. Alternativement active ou inactive
+				classes.toggle("some-new-class");
+				
+				// Retourne si une classe est présente
+				classes.contains("some-new-class");
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (5/x)</h3>
+			<i>Attributs</i>
+			<br/>
+			<pre><code class="hljs javascript" data-trim>
+				const element = document.querySelector("#some-element");
+				
+				// Retourne si un attribut est présent sur l'élément
+				const hasAttr = element.hasAttribute("some-attribute");
+				
+				// Retourne la valeur d'un attribut
+				const valueAttr = element.getAttribute("some-attribute");
+				
+				// Définit la valeur d'un attribut (mise à jour ou ajout)
+				element.setAttribute("new-attribute", "new-value");
+				
+				// Supprime un attribut
+				element.removeAttribute("new-attribute");
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (6/x)</h3>
+			<i>Ajout d'éléments DOM</i>
+			<br/>
+			Cela pourrait être fait via innerHTML ou outerHTML mais ce n'est pas le plus simple à utiliser.
+			<pre><code class="hljs javascript" data-trim>
+				// Crée un nouvel élément
+				const newElement = document.createElement("div");
+				newElement.setAttribute("new-attribute", "new-value");
+				
+				// Crée un noeud texte
+				const newElementText = document.createTextNode("NEW-VALUE");
+				
+				// Ajout le noeud texte dans le nouvel élément
+				newElement.appendChild(newElementText);
+				
+				// Ajoute le nouvel élément dans la hiérarchie DOM
+				document.body.appendChild(newElement);
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (7/x)</h3>
+			<i>Ajout de CSS</i>
+			<pre><code class="hljs javascript" data-trim>
+				const element = document.querySelector("#some-element");
+				
+				// Définit le style à travers les attributs
+				// Les attributs sont en camel case comparé à la propriété CSS
+				element.style.color = "red";
+				element.style.backgroundColor = "green";
+				// ou
+				element.setAttribute("style", "color: red; background-color: green;");
+				
+				// Définit le style à travers une chaîne de caractères
+				element.cssText = "color: white; background-color: red;";
+			</code></pre>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (8/x)</h3>
+			<i>Evénements navigateur</i>
+			<table>
+				<thead>
+					<th>Type</th>
+					<th>Description</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>load</td>
+						<td>Lorsque le chargement de la ressource et des dépendances est terminé</td>
+					</tr>
+					<tr>
+						<td>error</td>
+						<td>Lorsqu'une ressource n'a pas pu être chargée</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (9/x)</h3>
+			<i>Evénements navigateur</i>
+			<table>
+				<thead>
+					<th>Type</th>
+					<th>Description</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>online/offline</td>
+						<td>Lorsque vous travaillez en ligne ou hors ligne</td>
+					</tr>
+					<tr>
+						<td>resize</td>
+						<td>Lorsque la fenêtre a été redimensionnée</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (10/x)</h3>
+			<i>Evénements DOM</i>
+			<table>
+				<thead>
+					<th>Type</th>
+					<th>Description</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>focus</td>
+						<td>Lorsqu'un élément est mis en évidence(par un clic, une tabulation, etc.)</td>
+					</tr>
+					<tr>
+						<td>blur</td>
+						<td>Lorsqu'un élément n'est plus mis en évidence</td>
+					</tr>
+					<tr>
+						<td>mouse</td>
+						<td>click, mouseover, drag, drop, etc.</td>
+					</tr>
+					<tr>
+						<td>keyboard</td>
+						<td>keyup, keydown</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h3>Interagir avec le DOM (11/x)</h3>
+			<i>Evénements</i>
+			<pre><code class="hljs javascript" data-trim>
+				function clickTest() {
+					alert("clicked");
+				}
+				
+				function clickTestWithArg(iArg) {
+					alert(iArg);
+				}
+			
+				const element = document.querySelector("#some-element");
+				
+				// element.addEventListener(type, callback, useCapture);
+				element.addEventListener("click", clickTest, false);
+				element.addEventListener("click", (function() {
+					alert("clicked");
+				}), false);
+				element.addEventListerner("click", (function() {
+					clickTestWithArg("clicked");
+				}), false);
+			</code></pre>
+		</section>
 	  </section>
 	  <section>
 		<section>
