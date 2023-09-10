@@ -2709,6 +2709,154 @@
 		<section>
 			<h2>Gestion des erreurs</h2>
 		</section>
+		<section>
+			La gestion d'erreur en JavaScript est un aspect crucial de la programmation, car elle permet de détecter et de gérer les erreurs qui peuvent survenir
+			lors de l'exécution du code. Les erreurs peuvent être causées par divers facteurs: erreurs de syntaxe, serveur, utilisateurs, etc.
+		</section>
+		<section>
+			<i>Erreurs courantes</i>
+			<br />
+			<table>
+				<thead>
+					<th>Nom</th>
+					<th>Description</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>SyntaxError</td>
+						<td>
+							Erreur de syntaxe qui se produit lorsque le code ne suit pas la syntaxe correcte de JavaScript. Par exemple, des parenhèses non fermées, 
+							des points-virgules manquants, etc.
+						</td>
+					</tr>
+					<tr>
+						<td>ReferenceError</td>
+						<td>
+							Erreur de syntaxe qui se produit lorsqu'une variable ou une fonction est utilisée avant d'être déclarée.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<i>Erreurs courantes</i>
+			<br />
+			<table>
+				<thead>
+					<th>Nom</th>
+					<th>Description</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>TypeError</td>
+						<td>
+							Erreur de types qui se produit lorsque les opérations sont effectuées sur des types de données incompatibles.
+							Par exemple, appeler une méthode qui attend un number et y envoyer un objet.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h4>Prise en charge de l'erreur</h4>
+			Par conséquent, on essaiera toujours de limiter les cas d'erreurs et gérer les cas d'erreurs sur lesquels on n'a pas forfément le contrôle
+		</section>
+		<section>
+			<h4>Le bloc try ... catch</h4>
+			Tout erreur générée est créée à partir de l'objet <span class="accentued-2">Error</span>. Pour capturer l'erreur il existe un syntaxe: <span class="accentued-2">try ... catch</span>
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					try {
+						// On met ici le code que l'on souhaite couvrir de potentielles erreurs
+						alert('Hello');
+					} catch (error) {
+						// On récupère l'erreur qui a été générée
+						alert('An error occurred');
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h4>Le bloc try ... catch</h4>
+			On peut récupérer des informations dans l'<span class="accentued-2">Error</span> pour nous aider à mieux la gérer.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					try {
+						// On met ici le code que l'on souhaite couvrir de potentielles erreurs
+						alert('Hello');
+					} catch (error) {
+						// On récupère le nom, le message et la call stack
+						console.log(error.name, error.message, error.stack);
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h4>throw</h4>
+			Il peut arriver que l'on sait à l'avance des cas où il peut y avoir une erreur et donc vouloir gérer cela en levant une exception.
+			Une exception est une erreur que l'on va gérer nous même et pas attendre que JavaScript le fasse.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					function div(a, b) {
+						if (b === 0) {
+							// On utilise le mot clé throw pour lever l'exception
+							throw new Error('Divide by 0 is impossible');
+						}
+						return a / b;
+					}
+
+					try {
+						const result = div(10, 0);
+					} catch (error) {
+						console.log(error.message);
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h4>Erreurs personnalisées</h4>
+			Vous pouvez créer vos propres erreurs personnalisées en définissant des classes d'erreur.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					class DivisionByZeroError extends Error {
+						constructor() {
+							super('Division by 0 is impossible');
+							this.name = 'DivisionByZeroError';
+						}
+					}
+					function div(a, b) {
+						if (b === 0) {
+							// On utilise le mot clé throw pour lever l'exception
+							throw new DivisionByZeroError();
+						}
+						return a / b;
+					}
+
+					try {
+						const result = div(10, 0);
+					} catch (error) {
+						console.log(error.message);
+					}
+				</script>
+			</code></pre>
+		</section>
+		<section>
+			<h4>finally</h4>
+			En complément du bloc <span class="accentued-2">try ... catch</span>, vous pouvez utiliser le bloc <span class="accentued-2">finally</span>.
+			Le code à l'intérieur de ce bloc est exécuté qu'une erreur se produire ou non. Cela est par exemple utile pour effectuer des opérations de nettoyage
+			ou de finalisation.
+			<pre><code class="hljs javascript" data-trim>
+				<script type="text/template">
+					try {
+						// Code 
+					} catch (error) {
+						// Gestion de l'erreur
+					} finally {
+						// Code exécuté quoi qu'il arrive
+					}
+				</script>
+			</code></pre>
+		</section>
 	  </section>
 	  <section>
 		<section>
