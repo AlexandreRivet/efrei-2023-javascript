@@ -18,7 +18,7 @@ module.exports = {
       template: path.resolve(__dirname, '../src/index.html')
     }),
     new CopyWebpackPlugin({
-      patterns: ['libs', 'subcontent'].map((dirName) => ({
+      patterns: ['libs', 'subcontent', 'assets'].map((dirName) => ({
         from: path.resolve(__dirname, `../src/${dirName}`),
         to: path.resolve(__dirname, `../dist/${dirName}`),
       }))

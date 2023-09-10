@@ -23,19 +23,22 @@
 		<section>
 			<h3>Définition</h3>
 			<ul>
-				<li>Créé en <span class="accentued-1">1995</span></li>
+				<li>Créé en <span class="accentued-2">1995</span></li>
 				<li>Un langage de programmation les plus populaires et fait partie des <i>standards</i> avec le HTML et CSS</li>
-				<li>Langage <span class="accentued-1">interprété</span> par les principaux navigateurs web: Google Chrome, Safari, Firefox, Edge, etc.</li>
-				<li>Son évolution est gérée par le group <span class="accentued-1">ECMA international</span></li>
+				<li>Langage <span class="accentued-2">interprété</span> par les principaux navigateurs web: Google Chrome, Safari, Firefox, Edge, etc.</li>
+				<li>Son évolution est gérée par le group <span class="accentued-2">ECMA international</span></li>
 			</ul>
+		</section>
+		<section>
+			<img data-src="assets/javascript-vs-java.jpg" style="width: auto; height: 500px;">
 		</section>
 		<section>
 			<h3>Fondamentaux</h3>
 			<ul>
-				<li>JavaScript est un langage <span class="accentued-1">dynamique</span></li>
-				<li>JavaScript est un langage (principalement) côté <span class="accentued-1">client</span></li>
-				<li>JavaScript est un langage <span class="accentued-1">interprété</span></li>
-				<li>JavaScript est un langage orienté <span class="accentued-1">objet</span></li>
+				<li>JavaScript est un langage <span class="accentued-2">dynamique</span></li>
+				<li>JavaScript est un langage (principalement) côté <span class="accentued-2">client</span></li>
+				<li>JavaScript est un langage <span class="accentued-2">interprété</span></li>
+				<li>JavaScript est un langage orienté <span class="accentued-2">objet</span></li>
 			</ul>
 		</section>
 		<section>
@@ -49,15 +52,15 @@
 		<section>
 			<h3>Langage (principalement) côté client (1/2)</h3>
 			<ul>
-				<li>Un site web est un ensemble <span class="accentued-1">de ressources et de fichiers</span> liés entre eux</li>
-				<li>Pour accéder à un site Web de n'importe où, il faut l'héberger sur un <span class="accentued-1">serveur</span></li>
+				<li>Un site web est un ensemble <span class="accentued-2">de ressources et de fichiers</span> liés entre eux</li>
+				<li>Pour accéder à un site Web de n'importe où, il faut l'héberger sur un <span class="accentued-2">serveur</span></li>
 				<li>Un serveur est un ordinateur connecté à d'autres serveurs qui va héberger les fichiers et les envoyer à un client sur sa demande</li>
 			</ul>
 		</section>
 		<section>
 			<h3>Langage (principalement) côté client (2/2)</h3>
 			<ul>
-				<li>Lorsqu'on accède à un site web via un navigateur, le serveur envoie donc tous les fichiers puis le navigateur se charge de les <span class="accentued-1">éxécuter côté client</span></li>
+				<li>Lorsqu'on accède à un site web via un navigateur, le serveur envoie donc tous les fichiers puis le navigateur se charge de les <span class="accentued-2">éxécuter côté client</span></li>
 				<li>En opposition, un langage côté serveur est exécuté côté serveur et les navigateurs ne sont pas capables de les comprendre</li>
 			</ul>
 			<br /><br />
@@ -66,13 +69,13 @@
 		<section>
 			<h3>Langage interprété</h3>
 			<ul>
-				<li>Langage interprété: Capable d'être exécuté directement sous condition d'avoir le bon <span class="accentued-1">interpréteur</span> (ce que possède chaque navigateur web)</li>
-				<li>En opposition au langage <span class="accentued-1">compilé</span> tel que le langage C qui transforme d'abord en une autre forme pour pouvoir exécuter le code</li>
+				<li>Langage interprété: Capable d'être exécuté directement sous condition d'avoir le bon <span class="accentued-2">interpréteur</span> (ce que possède chaque navigateur web)</li>
+				<li>En opposition au langage <span class="accentued-2">compilé</span> tel que le langage C qui transforme d'abord en une autre forme pour pouvoir exécuter le code</li>
 			</ul>
 		</section>
 		<section>
 			<h3>Langage orienté objet</h3>
-			<a href="TBD">Détaillé ici</a>
+			<a href="#/8" target="_blank">Détaillé ici</a>
 		</section>
 	  </section>
 	  <section>
@@ -153,9 +156,9 @@
 			<h3>Ordre d'exécution du code par la navigateur (3/3)</h3>
 			Il existe 3 manières de contourner ça:<br/>
 			<ul>
-				<li>Mettre tout le JavaScript que l'on souhaite exécuter dans <span class="accentued-1">document.addEventListener('DOMContentLoaded', function() {})</span></li>
-				<li>Mettre ses imports de JavaScript en fin de <span class="accentued-1">body</span> pour qu'il soit chargé et exécuté en dernier</li>
-				<li>Ajouter un attribut <span class="accentued-1">async</span> ou <span class="accentued-1">defer</span> sur la balise script qui permettra de mieux ordonner le chargement ou même de charger en asynchrone</li>
+				<li>Mettre tout le JavaScript que l'on souhaite exécuter dans <span class="accentued-2">document.addEventListener('DOMContentLoaded', function() {})</span></li>
+				<li>Mettre ses imports de JavaScript en fin de <span class="accentued-2">body</span> pour qu'il soit chargé et exécuté en dernier</li>
+				<li>Ajouter un attribut <span class="accentued-2">async</span> ou <span class="accentued-2">defer</span> sur la balise script qui permettra de mieux ordonner le chargement ou même de charger en asynchrone</li>
 			</ul>
 		</section>
 	  </section>
@@ -204,7 +207,7 @@
 		<section>
 			<h4>Le point-virgule (1/3)</h4>
 			En JavaScript, le point-virgule ';' est utilisé pour terminer une instruction. Cependant, il n'est pas toujours obligatoire de l'utiliser à la fin de chaque instruction,
-			car JavaScript a une fonctionnalité appelée <span class="accentued-1">Automatic Semicolor Insertion (ASI)</span> qui insère automatiquement des point-virgules dans certains cas.
+			car JavaScript a une fonctionnalité appelée <span class="accentued-2">Automatic Semicolor Insertion (ASI)</span> qui insère automatiquement des point-virgules dans certains cas.
 		</section>
 		<section>
 			<h4>Le point-virgule (2/3)</h4>
@@ -257,8 +260,8 @@
 			Concernant le nom d'une variable, vous avez une grande liberté de nommage tout en respectant certaines règles:
 			<br/>
 			<ul>
-				<li>Un nom de variable doit commencer par une lettre <span class="accentued-2">(a-z, A-Z)</span> ou <span class="accentued-2">_</span>: <span class="accentued-1">age</span></li>
-				<li>Le reste du nom de variable peut contenir des <span class="accentued-2">lettres</span>, des chiffres <span class="accentued-2">(0-9)</span> ou <span class="accentued-2">_</span>: <span class="accentued-1">name1</span</li>
+				<li>Un nom de variable doit commencer par une lettre <span class="accentued-2">(a-z, A-Z)</span> ou <span class="accentued-2">_</span>: <span class="accentued-2">age</span></li>
+				<li>Le reste du nom de variable peut contenir des <span class="accentued-2">lettres</span>, des chiffres <span class="accentued-2">(0-9)</span> ou <span class="accentued-2">_</span>: <span class="accentued-2">name1</span</li>
 				<li>Un nom de variable ne doit pas contenir d'espace</li>
 				<li>Un nom de variable est sensible à la casse, ce qui signifie que <span class="accentued-2">age</span>, <span class="accentued-2">Age</span> ou <span class="accentued-2">AGE</span> sont 3 noms variables différents</li>
 			</ul>
@@ -267,8 +270,8 @@
 			<h4>Déclaration (3/3)</h4>
 			<ul>
 				<li>Il y a des mots-clés qui sont réservés au langage. Vous ne pouvez pas les utiliser comme noms de variables</li>
-				<li>Il est généralement recommandé d'utiliser la convention lower camel case pour définir les noms de variables. Cette convention dit que lorsqu'un nom de variable est composé de plusieurs mots, on colle les mots en utilisant une majuscule sauf pour le premier: <span class="accentued-1">myAge</span</li>
-				<li>Il est recommandé de choisir des noms de variables significatifs et descriptifs pour améliorer la lisibilité du code: <span class="accentued-1"><del>tmp</del></span> => <span class="accentued-1">myAge</span></li>
+				<li>Il est généralement recommandé d'utiliser la convention lower camel case pour définir les noms de variables. Cette convention dit que lorsqu'un nom de variable est composé de plusieurs mots, on colle les mots en utilisant une majuscule sauf pour le premier: <span class="accentued-2">myAge</span</li>
+				<li>Il est recommandé de choisir des noms de variables significatifs et descriptifs pour améliorer la lisibilité du code: <span class="accentued-2"><del>tmp</del></span> => <span class="accentued-2">myAge</span></li>
 			</ul>
 		</section>
 		<section>
