@@ -32,6 +32,7 @@
 		<section>
 			<img data-src="assets/javascript-vs-java.jpg" style="width: auto; height: 500px;">
 		</section>
+
 		<section>
 			<h3>Fondamentaux</h3>
 			<ul>
@@ -75,7 +76,15 @@
 		</section>
 		<section>
 			<h3>Langage orienté objet</h3>
-			<a href="#/8" target="_blank">Détaillé ici</a>
+			<a href="#/8" target="_blank">Détaillé ici (voir slides concernées)</a>
+		</section>
+		<section>
+			<h3>Exemples de réalisation</h3>
+			<ul>
+				<li><a href="https://www.makemepulse.com/" target="_blank">makemepulse</a></li>
+				<li><a href="https://bruno-simon.com/" target="_blank">Bruno Simon</a></li>
+				<li><a href="https://prometheusfuels.com/" target="_blank">Prometheus</a></li>
+			</ul>
 		</section>
 	  </section>
 	  <section>
@@ -103,6 +112,14 @@
 			<h3>Debogage</h3>
 		</section>
 		<section>
+			Le débogage en JavaScript est un processus essentiel pour identifier et résoudre les erreurs d'exécution dans votre code.
+			<br />
+			<ul>
+				<li>Utilisez <span class="accentued-2">console.log</span> pour afficher des valeurs, des messages ou toutes informations d'état à différentes étapes de l'exécution</li>
+				<li>Les navigateurs disposent de débogueurs intégrés. Vous pouvez définir des points d'arrêt, inspecter des variables, suivre l'exécution pas à pas, etc.</li>
+			</ul>
+		</section>
+		<section>
 			<h4>Chrome Dev Tools</h4>
 			<img data-src="assets/chrome-dev-tools.jpg" style="width: auto; height: 400px; margin: 0 0;"/>
 			<ul>
@@ -111,6 +128,17 @@
 				<li>Sources: Liens vers le code source et debug</li>
 				<li>Network: Requêtes réseaux</li>
 			</ul>
+		</section>
+		<section>
+			Il existe une instruction que l'on peut placer dans le code à l'endroit où vous souhaitez démarrer le débogage. Cette instruction est <span class="accentued-2">debugger</span>.
+			Lorsque le code atteint cette instruction, l'exécution est mise en pause et le débogueur du navigateur s'ouvre.
+			<pre><code class="hljs js" data-trim>
+				function myFunction() {
+					let x = 10;
+					debugger;
+					console.log(x);
+				}
+			</code></pre>
 		</section>
 	  </section>
 	  <section>
@@ -193,7 +221,7 @@
 		<section>
 			<h4>Les commentaires (2/3)</h4>
 			<h5>Commentaires sur une ligne</h5>
-			Pour écrire un commentaire sur une seule ligne, vous pouvez utilisez deux slash '//'. Tout ce qui suit les deux slash sur la même ligne sera considéré comme un commentaire.
+			Pour écrire un commentaire sur une seule ligne, vous pouvez utiliser deux slash '//'. Tout ce qui suit les deux slash sur la même ligne sera considéré comme un commentaire.
 			<pre><code class="hljs js" data-trim>
 				// Ceci est un commentaire sur une seule ligne
 				var foo = 'bar'; // Vous pouvez également placer un commentaire à côté du code
@@ -257,7 +285,7 @@
 		</section>
 		<section>
 			<h4>Déclaration (1/3)</h4>
-			Pour déclarer une variable, vous pouvez utiliser le mot-clé <span class="accentued-2">var</span>, <span class="accentued-2">let</span> ou <span class="accentued-2">const</span>, selont le type de variable que vous souhaitez créer:
+			Pour déclarer une variable, vous pouvez utiliser le mot-clé <span class="accentued-2">var</span>, <span class="accentued-2">let</span> ou <span class="accentued-2">const</span>, selon le type de variable que vous souhaitez créer:
 			<br/>
 			<ul>
 				<li><span class="accentued-2">var</span> (déprécié): C'était la façon standarde de déclarer des variables avec ECMAScript 6</li>
@@ -372,7 +400,7 @@
 				let age = 20;
 			</code></pre>
 			La nouvelle syntaxe en let n'autorise plus cela. Si on souhaite modifier la valeur stockée, il suffit juste de la réaffecter via le nom.
-			<br />Une fois plus, cette décision a été prise pour des raisons de clarté et de pertinence dans le code.
+			<br />Une fois de plus, cette décision a été prise pour des raisons de clarté et de pertinence dans le code.
 		</section>
 		<section>
 			<h4>let & var (7/8)</h4>
@@ -387,7 +415,7 @@
 				}
 				myFunc(); // Affiche 10
 			</code></pre>
-			Les variables déclarées en <span class="accentued-2">var</span> sont fonctionnelles (portée dans une fonction), ce qui signifie qu'elles sont liées à la fonction dans laquelle elles sont déclarées (ou globales si déclarées en dehors de tout fonction)
+			Les variables déclarées en <span class="accentued-2">var</span> sont fonctionnelles (portée dans une fonction), ce qui signifie qu'elles sont liées à la fonction dans laquelle elles sont déclarées (ou globales si déclarées en dehors de toute fonction)
 		</section>
 		<section>
 			<h4>let & var (8/8)</h4>
@@ -614,7 +642,7 @@
 			<pre><code class="hljs javascript" data-trim>
 				let x = 1 - 2 - 3; // -4
 				let y = 1 - (3 - 2 * 4); // 6
-				let z = 2 ** 3 ** 2; // 512
+				let z = 2 ** 3 ** 2; // 512 (on fait les opérations de droite à gauche)
 			</code></pre>
 		</section>
 		<section>
